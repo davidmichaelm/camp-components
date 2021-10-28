@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-widgets": "parcel build packages/*"
+    "build-widgets": "parcel build packages/*",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "",
   "license": "ISC",
@@ -13,11 +15,20 @@
     "@sanity/image-url": "^1.0.1",
     "parcel": "^2.0.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "storybook-css-modules-preset": "^1.1.1"
   },
   "workspaces": [
-    "packages/banners",
-    "packages/events",
+    "packages/Banners",
+    "packages/Events",
     "packages/common"
-  ]
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/react": "^6.3.12",
+    "babel-loader": "^8.2.3"
+  }
 }
