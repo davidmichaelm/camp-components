@@ -1,0 +1,40 @@
+{
+  "name": "@camp-components/banners",
+  "context": "browser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Marquardt",
+  "license": "ISC",
+  "dependencies": {
+    "@sanity/block-content-to-react": "^3.0.0",
+    "@sanity/client": "^2.21.7",
+    "@sanity/image-url": "^1.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "parcel": "^2.0.0"
+  },
+  "devDependencies": {
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "targets": {
+    "widget": {
+      "source": "widget.js",
+      "sourceMap": false
+    }
+  }
+}
