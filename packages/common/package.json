@@ -14,5 +14,8 @@
   "dependencies": {
     "@sanity/client": "^2.21.7",
     "@sanity/image-url": "^1.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

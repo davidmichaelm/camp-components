@@ -34,5 +34,8 @@
       "source": "widget.js",
       "sourceMap": false
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
