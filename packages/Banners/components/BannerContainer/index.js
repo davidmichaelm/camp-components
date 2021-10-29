@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {sanityClient} from "@campphillip/common/sanity-client";
 import Banner from "../Banner";
+import * as styles from "./banner-container.module.css";
 
 const BannerContainer = () => {
     const [banners, setBanners] = useState([]);
@@ -15,8 +16,10 @@ const BannerContainer = () => {
     }, []);
 
     return (
-        <div>
-            {banners.map(banner => <Banner {...banner} />)}
+        <div className={styles.bannerContainer}>
+            <div className={styles.bannerApp}>
+                {banners.map(banner => <Banner {...banner} />)}
+            </div>
         </div>
     );
 };

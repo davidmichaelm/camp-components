@@ -3,6 +3,7 @@
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     border-radius: 9px;
 
     display: flex;
@@ -11,10 +12,14 @@
     align-items: center;
 
     font-family: Montserrat, sans-serif;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     color: white;
     text-align: center;
+}
+
+.banner p {
+    margin: 10px;
 }
 
 @media only screen and (min-width: 550px) {
