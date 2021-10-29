@@ -20,6 +20,7 @@
 
 .banner p {
     margin: 10px;
+    line-height: normal;
 }
 
 @media only screen and (min-width: 550px) {
