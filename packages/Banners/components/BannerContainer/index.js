@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {sanityClient} from "@camp-components/common/sanity-client";
+import {sanityClient} from "@campphillip/common/sanity-client";
 import Banner from "../Banner";
 
 const BannerContainer = () => {

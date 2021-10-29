@@ -3,7 +3,7 @@ import * as styles from "./eventCard.module.css";
 import BlockContent from "@sanity/block-content-to-react";
 import {DateTime, Interval} from "luxon";
 import Skeleton, {SkeletonTheme} from "react-loading-skeleton";
-import {urlFor} from "@camp-components/common";
+import {urlFor} from "@campphillip/common";
 
 const EventCard = ({name, image, startDate, endDate, shortDescription, buttons, loading}) => {
     const dates = getDates(startDate, endDate);

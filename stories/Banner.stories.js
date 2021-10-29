@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Banner} from "@camp-components/banners";
+import {Banner} from "@campphillip/banners";
 
 export default {
     title: 'Banner',

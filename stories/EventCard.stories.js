@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {EventCard} from "@camp-components/events";
+import {EventCard} from "@campphillip/events";
 
 export default {
     title: 'EventCard',
