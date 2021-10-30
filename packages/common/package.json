@@ -1,6 +1,6 @@
 {
   "name": "@campphillip/common",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "",
   "type": "module",
   "source": "index.js",
