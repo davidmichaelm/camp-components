@@ -1,6 +1,6 @@
 {
   "name": "@campphillip/common",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "",
   "source": "index.js",
   "main": "dist/main.js",
