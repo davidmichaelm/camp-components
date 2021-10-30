@@ -8,7 +8,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "lerna bootstrap --force-local && lerna link --force-local",
-    "prepack": "lerna exec rm -rf dist && npm run build"
+    "prepack": "lerna exec -- rm -rf dist && npm run build"
   },
   "author": "",
   "license": "ISC",
