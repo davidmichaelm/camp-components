@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build-widgets": "parcel build packages/*",
+    "build": "parcel build packages/*",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
