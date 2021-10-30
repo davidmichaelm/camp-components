@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {sanityClient} from "@campphillip/common/sanity-client";
+import {sanityClient} from "@campphillip/common";
 import Banner from "../Banner";
 import * as styles from "./banner-container.module.css";
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {urlFor} from "@campphillip/common/sanity-client";
+import {urlFor} from "@campphillip/common";
 import BlockContent from "@sanity/block-content-to-react";
 import * as styles from "./banner.module.css";
 
