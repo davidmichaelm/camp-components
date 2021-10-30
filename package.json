@@ -7,8 +7,9 @@
     "build": "parcel build packages/*",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "prepublish": "npm ci",
     "prepare": "lerna bootstrap --force-local && lerna link --force-local",
-    "prepack": "npm run build"
+    "prepack": "lerna exec rm -rf dist && npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -26,7 +27,7 @@
     "packages/common"
   ],
   "devDependencies": {
-    "@campphillip/common": "^1.0.14",
+    "@campphillip/common": "file:packages/common",
     "@babel/core": "^7.15.8",
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.12",
