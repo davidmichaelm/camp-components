@@ -1,7 +1,7 @@
 {
   "name": "@campphillip/banners",
   "context": "browser",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "",
   "type": "module",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
   "author": "David Marquardt",
   "license": "ISC",
   "dependencies": {
-    "@campphillip/common": "^1.0.17",
+    "@campphillip/common": "^1.0.18",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^2.21.7",
     "@sanity/image-url": "^1.0.1",
