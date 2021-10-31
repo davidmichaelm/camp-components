@@ -4,7 +4,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import * as styles from "./banner.module.css";
 
 const color = (props) => {
-    return <span style={{color: props.mark.hex}}>{props.children}</span>
+    return <span style={{color: props.mark.hex, "&:hover": { color: props.mark.hex }}}>{props.children}</span>
 }
 
 const Banner = ({image, text, url}) => {
