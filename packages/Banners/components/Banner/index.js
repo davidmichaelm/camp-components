@@ -7,17 +7,18 @@ const color = (props) => {
     return <span style={{color: props.mark.hex}}>{props.children}</span>
 }
 
-const Banner = ({image, text}) => {
+const Banner = ({image, text, url}) => {
     return (
-        <div style={{
-            backgroundImage: `linear-gradient(
-                                rgba(0, 0, 0, 0.2),
-                                rgba(0, 0, 0, 0.2)
-                              ), url("${urlFor(image).width(1440).url()}")`
-        }}
-             className={styles.banner}>
-            <BlockContent blocks={text} serializers={{marks: {color}}}/>
-        </div>
+        <a href={url}
+           style={{
+               backgroundImage: `linear-gradient(
+                                    rgba(0, 0, 0, 0.2),
+                                    rgba(0, 0, 0, 0.2)
+                                  ), url("${urlFor(image).width(1440).url()}")`
+           }}
+           className={styles.banner}>
+                <BlockContent blocks={text} serializers={{marks: {color}}}/>
+        </a>
     );
 };
 
