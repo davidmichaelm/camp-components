@@ -18,6 +18,6 @@ jobs:
           node-version: 14
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: lerna publish from-git
+      - run: lerna publish from-git --yes
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
