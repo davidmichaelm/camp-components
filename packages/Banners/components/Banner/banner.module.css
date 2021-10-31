@@ -1,5 +1,5 @@
 .banner {
-    height: 375px;
+    height: 300px;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -33,6 +33,8 @@
 
 @media only screen and (min-width: 1000px) {
     .banner {
-        font-size: 63px;
+        height: 375px;
+        min-width: 49%;
+        flex: 1;
     }
 }

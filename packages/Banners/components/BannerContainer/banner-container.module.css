@@ -7,6 +7,13 @@
 }
 
 .bannerApp {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
     width: 100%;
 }
 
@@ -25,5 +32,6 @@
         width: 90%;
         max-width: 1440px;
         margin: 40px 20px 10px 20px;
+        flex-direction: row;
     }
 }
