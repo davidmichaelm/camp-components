@@ -13,7 +13,7 @@ const Banner = ({image, text}) => {
             backgroundImage: `linear-gradient(
                                 rgba(0, 0, 0, 0.2),
                                 rgba(0, 0, 0, 0.2)
-                              ), url("${urlFor(image).height(375).url()}")`
+                              ), url("${urlFor(image).width(1440).url()}")`
         }}
              className={styles.banner}>
             <BlockContent blocks={text} serializers={{marks: {color}}}/>
