@@ -42,21 +42,25 @@ export const BoardApplication = () => {
     return (
         <Card sx={{maxWidth: '40rem', margin: 'auto', borderRadius: 4}}>
             <Stepper sx={{px: 5, pt: 3}} activeStep={currentStep}>
-                {stepperLabels.map(step => (
-                    <Step key={step}>
-                        <StepLabel>
-                            {step === 'Questions' && (
-                                <>
-                                    {(currentStep === 0 || currentStep === steps.length) &&
-                                    'Questions'}
-                                    {(currentStep !== 0 && currentStep < steps.length) &&
-                                    `Questions (${currentStep}/${steps.length - 1})`}
-                                </>
-                            )}
-                            {step !== 'Questions' && step}
-                        </StepLabel>
-                    </Step>
-                ))}
+                {stepperLabels.map(step => {
+                    const completed = currentStep >= steps.length;
+
+                    return (
+                        <Step key={step} completed={completed}>
+                            <StepLabel>
+                                {step === 'Questions' && (
+                                    <>
+                                        {(currentStep === 0 || currentStep === steps.length) &&
+                                        'Questions'}
+                                        {(currentStep !== 0 && currentStep < steps.length) &&
+                                        `Questions (${currentStep}/${steps.length - 1})`}
+                                    </>
+                                )}
+                                {step !== 'Questions' && step}
+                            </StepLabel>
+                        </Step>
+                    );
+                })}
             </Stepper>
             {steps[currentStep]}
         </Card>
