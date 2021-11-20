@@ -14,31 +14,14 @@ const MultilineInput = ({register, name, label, inputLabel, options, error, ...r
                 }}
             >{label ? label : name}</FormLabel>
             <TextField
+                multiline
+                minRows={5}
                 error={error !== undefined}
                 helperText={error?.message}
                 label={inputLabel ? inputLabel : name}
                 {...register(name, options)}
                 {...rest}
             />
-            {/*<InputBase
-                multiline
-                minRows={4}
-                fullWidth
-                placeholder="Enter your answer here"
-                error={error !== undefined}
-                sx={{
-                    mt: 1,
-                    padding: 2,
-                    borderStyle: 'solid',
-                    borderWidth: '1px',
-                    borderColor: error
-                        ? theme.palette.error.main
-                        : theme.palette.action.disabled,
-                    borderRadius: '4px'
-                }}
-                {...register(name, options)}
-                {...rest}
-            />*/}
         </Box>
     );
 }

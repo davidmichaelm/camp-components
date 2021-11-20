@@ -1,9 +1,8 @@
 import {TextField} from "@mui/material";
 
 const Input = ({register, name, label, options, error, ...rest}) => {
-    console.log(error)
-
     return <TextField
+        fullWidth
         error={error !== undefined}
         helperText={error?.message}
         label={label ? label : name}
