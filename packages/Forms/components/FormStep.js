@@ -10,7 +10,7 @@ const FormStep = ({children, ...rest}) => {
         resolver: yupResolver(schema)
     });
 
-    const childInputs = inputs.map(child => {
+    const childInputs = inputs?.map(child => {
         return child?.props?.name
             ? React.createElement(child.type, {
                 ...{

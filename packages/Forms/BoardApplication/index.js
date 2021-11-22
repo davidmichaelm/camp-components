@@ -2,16 +2,26 @@ import {Card, Step, StepLabel, Stepper} from "@mui/material";
 import {useState} from "react";
 import ContactStep from "./components/ContactStep";
 import QuestionStep from "./components/QuestionStep";
+import ReviewStep from "./components/ReviewStep";
+import {MultiStepLabel} from "../components";
 
 export const BoardApplication = () => {
     const [result, setResult] = useState("");
     const onSubmit = (data) => setResult(JSON.stringify(data));
 
-    const [currentStep, setCurrentStep] = useState(0);
+    const [currentStepIndex, setCurrentStepIndex] = useState(0);
+    const [currentSubstepIndex, setCurrentSubstepIndex] = useState(0);
 
     const next = () => {
-        console.log("next")
-        setCurrentStep(currentStep + 1);
+        setCurrentStepIndex(currentStepIndex + 1);
+    };
+
+    const nextSubstep = (totalSteps) => {
+        if (currentSubstepIndex + 1 < totalSteps) {
+            setCurrentSubstepIndex(currentSubstepIndex + 1);
+        } else {
+            next();
+        }
     };
 
     const questions = [
@@ -25,44 +35,55 @@ export const BoardApplication = () => {
     ];
 
     const steps = [
-        <ContactStep onSubmit={next}/>
+        {
+            label: 'Contact Info',
+            element: <ContactStep onSubmit={next}/>
+        },
+        {
+            label: 'Questions',
+            substeps: questions.map((question, index) => {
+                const num = index + 1;
+                return <QuestionStep
+                    onSubmit={() => nextSubstep(questions.length)}
+                    label={question}
+                    inputLabel={`Question #${num}`}
+                    name={`question${num}`}
+                />
+            })
+        },
+        {
+            label: 'Review',
+            element: <ReviewStep onSubmit={() => console.log("done")}/>
+        }
     ];
 
-    questions.forEach((question, index) => {
-        const num = index + 1;
-        steps.push(<QuestionStep onSubmit={next} label={question} inputLabel={`Question #${num}`}
-                                 name={`question${num}`}/>)
-    });
-
-    const stepperLabels = [
-        'Contact Info',
-        'Questions'
-    ];
+    const currentStep = steps[currentStepIndex];
+    const currentSubstep = currentStep?.substeps
+        ? currentStep.substeps[currentSubstepIndex]
+        : null;
 
     return (
         <Card sx={{maxWidth: '40rem', margin: 'auto', borderRadius: 4}}>
-            <Stepper sx={{px: 5, pt: 3}} activeStep={currentStep}>
-                {stepperLabels.map(step => {
-                    const completed = currentStep >= steps.length;
-
-                    return (
-                        <Step key={step} completed={completed}>
-                            <StepLabel>
-                                {step === 'Questions' && (
-                                    <>
-                                        {(currentStep === 0 || currentStep === steps.length) &&
-                                        'Questions'}
-                                        {(currentStep !== 0 && currentStep < steps.length) &&
-                                        `Questions (${currentStep}/${steps.length - 1})`}
-                                    </>
-                                )}
-                                {step !== 'Questions' && step}
-                            </StepLabel>
-                        </Step>
-                    );
+            <Stepper sx={{px: 5, pt: 3}} activeStep={currentStepIndex}>
+                {steps.map((step, index) => {
+                    return <Step key={step.label}>
+                        {step.element &&
+                        <StepLabel>{step.label}</StepLabel>
+                        }
+                        {(step.substeps && !step.element) && (
+                            <MultiStepLabel
+                                name={step.label}
+                                currentStep={currentStepIndex === index ? currentSubstepIndex + 1 : null}
+                                totalSteps={step.substeps.length}
+                            />
+                        )}</Step>;
                 })}
             </Stepper>
-            {steps[currentStep]}
+
+            {currentStep?.element && currentStep.element}
+            {(!currentStep?.element && currentStep?.substeps) &&
+            currentSubstep
+            }
         </Card>
     );
 };
