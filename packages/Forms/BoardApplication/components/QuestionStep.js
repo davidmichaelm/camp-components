@@ -2,7 +2,7 @@ import {FormStep, MultilineInput} from "../../components";
 import * as yup from "yup";
 import {Button} from "@mui/material";
 
-const QuestionStep = ({onSubmit, label, inputLabel, name}) => {
+const QuestionStep = ({onSubmit, onPrevious, label, inputLabel, name}) => {
     const schema = yup.object().shape({
         [name]: yup.string().required("This is a required field")
     });
@@ -18,7 +18,11 @@ const QuestionStep = ({onSubmit, label, inputLabel, name}) => {
                         inputLabel={inputLabel}
                         name={name}/>
                 ],
-                actions: <Button type="submit" sx={{ml: 'auto'}}>Next</Button>,
+                actions:
+                    <>
+                        <Button onClick={onPrevious} sx={{ml: 'auto'}}>Previous</Button>
+                        <Button type="submit">Next</Button>
+                    </>,
                 sx: {mt: 3}
             }}
         </FormStep>
