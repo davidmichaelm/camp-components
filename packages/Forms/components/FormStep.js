@@ -1,13 +1,16 @@
-import {CardContent, CardActions} from "@mui/material";
+import {CardContent, CardActions, Button, Box} from "@mui/material";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import React from "react";
 
 const FormStep = ({children, ...rest}) => {
-    const {onSubmit, schema, title, inputs, actions, style} = children;
+    const {onSubmit, schema, title, inputs, showBack, onBack, style, defaultValues} = children;
 
-    const {handleSubmit, formState: {errors}, register} = useForm({
-        resolver: yupResolver(schema)
+    const {handleSubmit, formState: {errors}, register, getValues} = useForm({
+        resolver: yupResolver(schema),
+        defaultValues: {
+            ...defaultValues
+        },
     });
 
     const childInputs = inputs?.map(child => {
@@ -22,6 +25,11 @@ const FormStep = ({children, ...rest}) => {
             })
             : child;
     });
+
+    const handleBackClick = () => {
+        const values = getValues();
+        onBack(values);
+    };
 
     return (
         <form
@@ -42,7 +50,10 @@ const FormStep = ({children, ...rest}) => {
             </CardContent>
 
             <CardActions>
-                {actions}
+                <Box sx={{ml: 'auto'}}>
+                    {showBack && <Button onClick={handleBackClick}>Back</Button>}
+                    <Button type="submit">Next</Button>
+                </Box>
             </CardActions>
         </form>
     );

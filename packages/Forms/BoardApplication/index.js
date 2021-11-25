@@ -1,3 +1,4 @@
+import React from "react";
 import {Card, Step, StepLabel, Stepper} from "@mui/material";
 import {useEffect, useState} from "react";
 import ContactStep from "./components/ContactStep";
@@ -19,7 +20,21 @@ export const BoardApplication = () => {
         ? currentStep.substeps[currentSubstepIndex]
         : null;
 
-    const next = (data) => {
+    const saveData = (data, stepName) => {
+        setFormResults(prevState => {
+            prevState[stepName] = {
+                ...prevState[stepName],
+                ...data
+            }
+            return prevState;
+        });
+    };
+
+    const next = (data, stepName) => {
+        if (data && stepName) {
+            saveData(data, stepName);
+        }
+
         if (currentStep.substeps && currentSubstepIndex + 1 < currentStep.substeps.length) {
             setCurrentSubstepIndex(currentSubstepIndex + 1);
         } else {
@@ -27,7 +42,11 @@ export const BoardApplication = () => {
         }
     };
 
-    const previous = (data) => {
+    const previous = (data, stepName) => {
+        if (data && stepName) {
+            saveData(data, stepName);
+        }
+
         if (currentStep.substeps && currentSubstepIndex !== 0) {
             setCurrentSubstepIndex(currentSubstepIndex - 1);
         } else {
@@ -37,32 +56,60 @@ export const BoardApplication = () => {
 
     useEffect(() => {
         setQuestions([
-            "Tell us a bit about you and your background.",
-            "Why are you interested in being on the board?",
-            "How often do you visit Camp?",
-            "What do you see as Camp's greatest need?",
-            "What do you see as your role on the board?",
-            "What makes you excited about Camp?",
-            "What other volunteer commitments do you have? Do you have any experience being on a board?"
+            {
+                name: "question1",
+                label: "Tell us a bit about you and your background.",
+                inputLabel: "Question 1"
+            },
+            {
+                name: "question2",
+                label: "Why are you interested in being on the board?",
+                inputLabel: "Question 2"
+            },
+            {
+                name: "question3",
+                label: "How often do you visit Camp?",
+                inputLabel: "Question 3"
+            },
+            {
+                name: "question4",
+                label: "What do you see as Camp's greatest need?",
+                inputLabel: "Question 4"
+            },
+            {
+                name: "question5",
+                label: "What do you see as your role on the board?",
+                inputLabel: "Question 5"
+            },
+            {
+                name: "question6",
+                label: "What makes you excited about Camp?",
+                inputLabel: "Question 6"
+            },
+            {
+                name: "question7",
+                label: "What other volunteer commitments do you have? Do you have any experience being on a board?",
+                inputLabel: "Question 7"
+            }
         ]);
     }, []);
 
     useEffect(() => {
         setSteps([
             {
-                label: 'Contact Info'
+                label: 'Contact Info',
+                name: 'contact-info'
             },
             {
                 label: 'Questions',
                 substeps: questions
             },
             {
-                label: 'Review'
+                label: 'Review',
+                name: 'review'
             }
         ]);
     }, [questions]);
-
-    console.log(currentStep?.label)
 
     return (
         <Card sx={{maxWidth: '40rem', margin: 'auto', borderRadius: 4}}>
@@ -83,19 +130,33 @@ export const BoardApplication = () => {
             </Stepper>
 
             {currentStep?.label === 'Contact Info' &&
-            <ContactStep onSubmit={(data) => next(data)}/>}
-
-            {currentStep?.label === 'Questions' &&
-            <QuestionStep
-                onSubmit={(data) => next(data)}
-                onPrevious={(data) => previous(data)}
-                label={currentSubstep}
-                inputLabel={`Question #${currentSubstepIndex + 1}`}
-                name={`question${currentSubstepIndex + 1}`}
+            <ContactStep
+                onSubmit={(data) => next(data, 'contact-info')}
+                defaultValues={{
+                    ...formResults['contact-info']
+                }}
             />}
 
+            {currentStep?.label === 'Questions' &&
+            questions.map((question, index) => {
+                return <React.Fragment key={question.name}>
+                    {currentSubstepIndex === index &&
+                    <QuestionStep
+                        onSubmit={(data) => next(data, 'questions')}
+                        onBack={(data) => previous(data, 'questions')}
+                        label={question.label}
+                        inputLabel={question.inputLabel}
+                        name={question.name}
+                        defaultValues={{
+                            [question.name]: formResults['questions']?.[question.name]
+                        }}
+                    />
+                    }
+                </React.Fragment>
+            })}
+
             {currentStep?.label === 'Review' &&
-            <ReviewStep onSubmit={() => console.log("done")} onPrevious={previous} />}
+            <ReviewStep onSubmit={() => console.log("done")} onPrevious={previous}/>}
         </Card>
     );
 };

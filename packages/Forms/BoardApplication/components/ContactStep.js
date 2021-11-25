@@ -10,7 +10,7 @@ const schema = yup.object().shape({
     phone: yup.string().matches(phoneRegExp, 'Phone number is not valid').required(),
 });
 
-const ContactStep = ({onSubmit}) => {
+const ContactStep = ({onSubmit, defaultValues}) => {
     return (
         <FormStep>
             {{
@@ -22,7 +22,7 @@ const ContactStep = ({onSubmit}) => {
                     <Input label="Email" name="Email"/>,
                     <Input label="Phone Number" name="phone"/>
                 ],
-                actions: <Button type="submit" sx={{ml: 'auto'}}>Next</Button>
+                defaultValues
             }}
         </FormStep>
     );
