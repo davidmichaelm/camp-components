@@ -1,6 +1,6 @@
 import React from "react";
 import {FormStep} from "../../components";
-import {Typography} from "@mui/material";
+import {Box, Typography} from "@mui/material";
 
 const ReviewStep = ({onSubmit, onBack, steps, formResults}) => {
 
@@ -18,12 +18,16 @@ const ReviewStep = ({onSubmit, onBack, steps, formResults}) => {
                     }, []);
 
                 return (
-                    <React.Fragment key={step.name}>
-                        <Typography variant="h6">{step.label}</Typography>
+                    <Box key={step.name}>
+                        <Typography variant="h6" fontWeight="bold">{step.label}</Typography>
                         {inputs.map(input => (
-                            <div key={input.name}>{input.label}: {stepResults[input.name]}</div>
+                            <React.Fragment key={input.name}>
+                                <Typography component="span" fontWeight="bold">{input.label}</Typography>
+                                {' '}
+                                <Typography sx={{pt: 0}}>{stepResults[input.name]}</Typography>
+                            </React.Fragment>
                         ))}
-                    </React.Fragment>
+                    </Box>
                 )
             })}
         </>
