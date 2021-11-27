@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import ContactStep from "./components/ContactStep";
 import QuestionStep from "./components/QuestionStep";
 import ReviewStep from "./components/ReviewStep";
-import {MultiStepLabel} from "../components";
+import {Input, MultiStepLabel} from "../components";
 
 export const BoardApplication = () => {
     const [questions, setQuestions] = useState([]);
@@ -42,7 +42,7 @@ export const BoardApplication = () => {
         }
     };
 
-    const previous = (data, stepName) => {
+    const back = (data, stepName) => {
         if (data && stepName) {
             saveData(data, stepName);
         }
@@ -58,39 +58,74 @@ export const BoardApplication = () => {
         setQuestions([
             {
                 name: "question1",
-                label: "Tell us a bit about you and your background.",
-                inputLabel: "Question 1"
+                inputs: [
+                    {
+                        name: "question1",
+                        label: "Tell us a bit about you and your background.",
+                        inputLabel: "Question 1"
+                    }
+                ]
             },
-            {
-                name: "question2",
-                label: "Why are you interested in being on the board?",
-                inputLabel: "Question 2"
-            },
-            {
-                name: "question3",
-                label: "How often do you visit Camp?",
-                inputLabel: "Question 3"
-            },
-            {
-                name: "question4",
-                label: "What do you see as Camp's greatest need?",
-                inputLabel: "Question 4"
-            },
-            {
-                name: "question5",
-                label: "What do you see as your role on the board?",
-                inputLabel: "Question 5"
-            },
-            {
-                name: "question6",
-                label: "What makes you excited about Camp?",
-                inputLabel: "Question 6"
-            },
-            {
-                name: "question7",
-                label: "What other volunteer commitments do you have? Do you have any experience being on a board?",
-                inputLabel: "Question 7"
-            }
+            // {
+            //     name: "question2",
+            //     inputs: [
+            //         {
+            //             name: "question2",
+            //             label: "Why are you interested in being on the board?",
+            //             inputLabel: "Question 2"
+            //         }
+            //     ]
+            // },
+            // {
+            //     name: "question3",
+            //     inputs: [
+            //         {
+            //             name: "question3",
+            //             label: "How often do you visit Camp?",
+            //             inputLabel: "Question 3"
+            //         }
+            //     ]
+            // },
+            // {
+            //     name: "question4",
+            //     inputs: [
+            //         {
+            //             name: "question4",
+            //             label: "What do you see as Camp's greatest need?",
+            //             inputLabel: "Question 4"
+            //         }
+            //     ]
+            // },
+            // {
+            //     name: "question5",
+            //     inputs: [
+            //         {
+            //             name: "question5",
+            //             label: "What do you see as your role on the board?",
+            //             inputLabel: "Question 5"
+            //         }
+            //     ]
+            // },
+            // {
+            //     name: "question6",
+            //     inputs: [
+            //         {
+            //             name: "question6",
+            //             label: "What makes you excited about Camp?",
+            //             inputLabel: "Question 6"
+            //         }
+            //     ]
+            // },
+            // {
+            //     name: "question7",
+            //     inputs: [
+            //         {
+            //             name: "question7",
+            //             label: "What other volunteer commitments do you have? Do you have any experience being on a board?",
+            //             inputLabel: "Question 7"
+            //         }
+            //     ]
+            // }
         ]);
     }, []);
 
@@ -98,10 +133,25 @@ export const BoardApplication = () => {
         setSteps([
             {
                 label: 'Contact Info',
-                name: 'contact-info'
+                name: 'contact-info',
+                inputs: [
+                    {
+                        name: "name",
+                        label: "Name"
+                    },
+                    {
+                        name: "Email",
+                        label: "Email"
+                    },
+                    {
+                        name: "phone",
+                        label: "Phone Number"
+                    }
+                ]
             },
             {
-                label: 'Questions',
+                label: "Questions",
+                name: "questions",
                 substeps: questions
             },
             {
@@ -143,9 +193,9 @@ export const BoardApplication = () => {
                     {currentSubstepIndex === index &&
                     <QuestionStep
                         onSubmit={(data) => next(data, 'questions')}
-                        onBack={(data) => previous(data, 'questions')}
-                        label={question.label}
-                        inputLabel={question.inputLabel}
+                        onBack={(data) => back(data, 'questions')}
+                        label={question.inputs[0].label}
+                        inputLabel={question.inputs[0].inputLabel}
                         name={question.name}
                         defaultValues={{
                             [question.name]: formResults['questions']?.[question.name]
@@ -156,7 +206,12 @@ export const BoardApplication = () => {
             })}
 
             {currentStep?.label === 'Review' &&
-            <ReviewStep onSubmit={() => console.log("done")} onPrevious={previous}/>}
+            <ReviewStep
+                onSubmit={() => console.log("done")}
+                onBack={back}
+                steps={steps}
+                formResults={formResults}
+            />}
         </Card>
     );
 };

@@ -4,7 +4,7 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import React from "react";
 
 const FormStep = ({children, ...rest}) => {
-    const {onSubmit, schema, title, inputs, showBack, onBack, style, defaultValues} = children;
+    const {onSubmit, schema, content, inputs, showBack, onBack, style, defaultValues} = children;
 
     const {handleSubmit, formState: {errors}, register, getValues} = useForm({
         resolver: yupResolver(schema),
@@ -45,7 +45,7 @@ const FormStep = ({children, ...rest}) => {
                     flexDirection: 'column',
                     gap: 2
                 }}>
-                {title}
+                {content}
                 {childInputs}
             </CardContent>
 

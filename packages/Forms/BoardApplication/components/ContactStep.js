@@ -16,7 +16,7 @@ const ContactStep = ({onSubmit, defaultValues}) => {
             {{
                 onSubmit,
                 schema,
-                title: <Typography variant="h4">Contact Info</Typography>,
+                content: <Typography variant="h4">Contact Info</Typography>,
                 inputs: [
                     <Input label="Name" name="name"/>,
                     <Input label="Email" name="Email"/>,
