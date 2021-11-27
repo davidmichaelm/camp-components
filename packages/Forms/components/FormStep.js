@@ -4,10 +4,10 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import React from "react";
 
 const FormStep = ({children, ...rest}) => {
-    const {onSubmit, schema, content, inputs, showBack, onBack, style, defaultValues} = children;
+    const {onSubmit, schema, content, inputs, showBack, onBack, style, defaultValues, submitText} = children;
 
     const {handleSubmit, formState: {errors}, register, getValues} = useForm({
-        resolver: yupResolver(schema),
+        resolver: schema ? yupResolver(schema) : null,
         defaultValues: {
             ...defaultValues
         },
@@ -52,7 +52,7 @@ const FormStep = ({children, ...rest}) => {
             <CardActions>
                 <Box sx={{ml: 'auto'}}>
                     {showBack && <Button onClick={handleBackClick}>Back</Button>}
-                    <Button type="submit">Next</Button>
+                    <Button type="submit">{submitText ? submitText : "Next"}</Button>
                 </Box>
             </CardActions>
         </form>

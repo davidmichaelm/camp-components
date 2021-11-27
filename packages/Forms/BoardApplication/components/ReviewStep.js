@@ -40,7 +40,8 @@ const ReviewStep = ({onSubmit, onBack, steps, formResults}) => {
                 onSubmit,
                 onBack,
                 sx: {mt: 3},
-                showBack: true
+                showBack: true,
+                submitText: "Submit"
             }}
         </FormStep>
     )
