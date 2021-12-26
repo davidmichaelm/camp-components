@@ -1,11 +1,16 @@
 import React from "react";
 import {FormStep} from "../../components";
-import {Box, Typography} from "@mui/material";
+import {Box, Typography, Alert} from "@mui/material";
 
-const ReviewStep = ({onSubmit, onBack, steps, formResults}) => {
+const ReviewStep = ({onSubmit, onBack, steps, formResults, finished, error}) => {
 
     const content = (
         <>
+            {error &&
+                <Alert severity="error">
+                    Sorry, something went wrong. Please try submitting again. If this error persists, please contact the website administrator.
+                </Alert>
+            }
             <Typography variant="h4">Review</Typography>
             {steps.map(step => {
                 const stepResults = formResults[step.name];
@@ -33,14 +38,29 @@ const ReviewStep = ({onSubmit, onBack, steps, formResults}) => {
         </>
     );
 
+    const finishedContent = (
+        <Box>
+            <Typography variant="h4">
+                Thank you!
+            </Typography>
+            <Typography sx={{pt: 1, pb: 2}}>
+                Your submission has been received.
+                Someone will reach out to you soon regarding your application.
+            </Typography>
+        </Box>
+    );
+
     return (
         <FormStep>
             {{
-                content,
+                content: finished ? finishedContent : content,
                 onSubmit,
                 onBack,
                 sx: {mt: 3},
-                showBack: true,
+                showButtons: {
+                    back: !finished,
+                    next: !finished
+                },
                 submitText: "Submit"
             }}
         </FormStep>

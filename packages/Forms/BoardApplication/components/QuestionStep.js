@@ -18,7 +18,10 @@ const QuestionStep = ({onSubmit, onBack, label, inputLabel, name, defaultValues}
                         name={name}/>
                 ],
                 sx: {mt: 3},
-                showBack: true,
+                showButtons: {
+                    back: true,
+                    next: true,
+                },
                 onBack,
                 defaultValues
             }}

@@ -1,6 +1,6 @@
 import {FormStep, Input} from "../../components";
 import * as yup from "yup";
-import {Button, Typography} from "@mui/material";
+import {Typography} from "@mui/material";
 
 const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
 
@@ -22,7 +22,10 @@ const ContactStep = ({onSubmit, defaultValues}) => {
                     <Input label="Email" name="Email"/>,
                     <Input label="Phone Number" name="phone"/>
                 ],
-                defaultValues
+                defaultValues,
+                showButtons: {
+                    next: true
+                }
             }}
         </FormStep>
     );

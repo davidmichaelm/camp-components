@@ -5,8 +5,9 @@ import ContactStep from "./components/ContactStep";
 import QuestionStep from "./components/QuestionStep";
 import ReviewStep from "./components/ReviewStep";
 import {MultiStepLabel} from "../components";
-import {sanityClient} from "@campphillip/common";
 import steps from "./data/steps.json";
+import {db} from "./firestore";
+import {collection, addDoc} from "firebase/firestore";
 
 export const BoardApplication = () => {
     const questions = steps.find(step => step.name === "questions")?.substeps;
@@ -16,6 +17,8 @@ export const BoardApplication = () => {
     const currentStep = steps[currentStepIndex];
 
     const [formResults, setFormResults] = useState({});
+    const [finished, setFinished] = useState(false);
+    const [submitError, setSubmitError] = useState(false);
 
     const saveData = (data, stepName) => {
         setFormResults(prevState => {
@@ -51,13 +54,34 @@ export const BoardApplication = () => {
         }
     }
 
+    const onSubmit = async () => {
+        const doc = {
+            _type: "BoardApplication"
+        };
+
+        for (const step in formResults) {
+            for (const field in formResults[step]) {
+                doc[field] = formResults[step][field];
+            }
+        }
+
+        try {
+            await addDoc(collection(db, "boardApplications"), doc);
+            next();
+            setFinished(true);
+        } catch (e) {
+            setSubmitError(true);
+            console.error("Error adding document:", e);
+        }
+    };
+
     return (
         <Card sx={{maxWidth: '40rem', margin: 'auto', borderRadius: 4}}>
             <Stepper sx={{px: 5, pt: 3}} activeStep={currentStepIndex}>
                 {steps.map((step, index) => {
                     return <Step key={step.label}>
                         {!step.substeps &&
-                        <StepLabel>{step.label}</StepLabel>
+                            <StepLabel>{step.label}</StepLabel>
                         }
                         {step.substeps && (
                             <MultiStepLabel
@@ -69,39 +93,41 @@ export const BoardApplication = () => {
                 })}
             </Stepper>
 
-            {currentStep?.label === 'Contact Info' &&
-            <ContactStep
-                onSubmit={(data) => next(data, 'contact-info')}
-                defaultValues={{
-                    ...formResults['contact-info']
-                }}
-            />}
+            {currentStep?.name === 'contact-info' &&
+                <ContactStep
+                    onSubmit={(data) => next(data, 'contact-info')}
+                    defaultValues={{
+                        ...formResults['contact-info']
+                    }}
+                />}
 
-            {currentStep?.label === 'Questions' &&
-            questions.map((question, index) => {
-                return <React.Fragment key={question.name}>
-                    {currentSubstepIndex === index &&
-                    <QuestionStep
-                        onSubmit={(data) => next(data, 'questions')}
-                        onBack={(data) => back(data, 'questions')}
-                        label={question.inputs[0].label}
-                        inputLabel={question.inputs[0].inputLabel}
-                        name={question.name}
-                        defaultValues={{
-                            [question.name]: formResults['questions']?.[question.name]
-                        }}
-                    />
-                    }
-                </React.Fragment>
-            })}
+            {currentStep?.name === 'questions' &&
+                questions.map((question, index) => {
+                    return <React.Fragment key={question.name}>
+                        {currentSubstepIndex === index &&
+                            <QuestionStep
+                                onSubmit={(data) => next(data, 'questions')}
+                                onBack={(data) => back(data, 'questions')}
+                                label={question.inputs[0].label}
+                                inputLabel={question.inputs[0].inputLabel}
+                                name={question.name}
+                                defaultValues={{
+                                    [question.name]: formResults['questions']?.[question.name]
+                                }}
+                            />
+                        }
+                    </React.Fragment>
+                })}
 
-            {currentStep?.label === 'Review' &&
-            <ReviewStep
-                onSubmit={() => console.log("done")}
-                onBack={back}
-                steps={steps}
-                formResults={formResults}
-            />}
+            {(currentStep?.name === 'review' || finished) &&
+                <ReviewStep
+                    onSubmit={onSubmit}
+                    onBack={back}
+                    steps={steps}
+                    formResults={formResults}
+                    finished={finished}
+                    error={submitError}
+                />}
         </Card>
     );
 };
