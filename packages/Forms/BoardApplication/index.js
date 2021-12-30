@@ -66,7 +66,7 @@ export const BoardApplication = () => {
         }
 
         try {
-            await addDoc(collection(db, "boardApplications"), doc);
+            await addDoc(collection(db, "forms/boardApplications/submissions"), doc);
             next();
             setFinished(true);
         } catch (e) {
