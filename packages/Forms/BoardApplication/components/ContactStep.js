@@ -6,7 +6,7 @@ const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -
 
 const schema = yup.object().shape({
     name: yup.string().required('Name is a required field'),
-    Email: yup.string().email('Email must be a valid email').required('Email is a required field'),
+    email: yup.string().email('Email must be a valid email').required('Email is a required field'),
     phone: yup.string().matches(phoneRegExp, 'Phone number is not valid').required(),
 });
 
@@ -19,7 +19,7 @@ const ContactStep = ({onSubmit, defaultValues}) => {
                 content: <Typography variant="h4">Contact Info</Typography>,
                 inputs: [
                     <Input label="Name" name="name"/>,
-                    <Input label="Email" name="Email"/>,
+                    <Input label="Email" name="email"/>,
                     <Input label="Phone Number" name="phone"/>
                 ],
                 defaultValues,
