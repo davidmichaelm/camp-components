@@ -2,7 +2,7 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     function isUser() {
-        return request.auth != null && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        return request.auth != null && exists(/databases/$(database)/documents/users/$(request.auth.token.email))
     }
 
     match /forms/{formId} {
@@ -15,4 +15,3 @@ service cloud.firestore {
     }
   }
 }
-
