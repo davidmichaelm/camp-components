@@ -2,7 +2,8 @@
   "name": "@campphillip/forms",
   "version": "1.2.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
+  "main": "dist/index.js",
   "scripts": {
     "dev:widgets": "parcel BoardApplication/widget.html",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,9 +20,20 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.19.0",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "firebase": "^9.6.0"
   },
   "devDependencies": {
     "prop-types": "^15.7.2"
+  },
+  "targets": {
+    "widget": {
+      "source": "BoardApplication/widget.js",
+      "sourceMap": false
+    },
+    "main": {
+      "source": "index.js",
+      "sourceMap": true
+    }
   }
 }
