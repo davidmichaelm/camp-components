@@ -10,10 +10,11 @@
   "author": "David Marquardt",
   "license": "ISC",
   "dependencies": {
-    "@emotion/react": "^11.5.0",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "@hookform/resolvers": "^2.8.3",
     "@mui/icons-material": "^5.2.5",
-    "@mui/material": "^5.0.6",
+    "@mui/material": "^5.2.7",
     "@parcel/transformer-react-refresh-wrap": "^2.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
