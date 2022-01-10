@@ -35,5 +35,11 @@
       "source": "index.js",
       "sourceMap": true
     }
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ]
 }
