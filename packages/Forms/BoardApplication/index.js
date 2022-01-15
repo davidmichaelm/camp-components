@@ -1,5 +1,5 @@
 import React from "react";
-import {Card, CircularProgress, Step, StepLabel, Stepper, Box, Typography} from "@mui/material";
+import {Paper, CircularProgress, Step, StepLabel, Stepper, Box, Typography} from "@mui/material";
 import {useState, useEffect} from "react";
 import ContactStep from "./components/ContactStep";
 import QuestionStep from "./components/QuestionStep";
@@ -103,7 +103,8 @@ export const BoardApplication = () => {
     };
 
     return (
-        <Card sx={{maxWidth: '40rem', margin: 'auto', borderRadius: 4}}>
+        <Box sx={{ display: 'flex', flexDirection: 'row'}}>
+        <Paper sx={{ flex: 1, maxWidth: '80rem', margin: 'auto'}} elevation={0}>
             {loading &&
                 <TempContent>
                     <Typography>Form loading...</Typography>
@@ -175,6 +176,7 @@ export const BoardApplication = () => {
                         />}
                 </>
             }
-        </Card>
+        </Paper>
+        </Box>
     );
 };
