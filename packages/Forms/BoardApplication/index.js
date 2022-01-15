@@ -104,7 +104,7 @@ export const BoardApplication = () => {
 
     return (
         <Box sx={{ display: 'flex', flexDirection: 'row'}}>
-        <Paper sx={{ flex: 1, maxWidth: '80rem', margin: 'auto'}} elevation={0}>
+        <Paper sx={{ flex: 1, maxWidth: '55rem', margin: 'auto'}} elevation={0}>
             {loading &&
                 <TempContent>
                     <Typography>Form loading...</Typography>
@@ -123,7 +123,7 @@ export const BoardApplication = () => {
             }
             {!loading && !error &&
                 <>
-                    <Stepper sx={{px: 5, pt: 3}} activeStep={currentStepIndex}>
+                    <Stepper sx={{pt: 3}} activeStep={currentStepIndex}>
                         {steps.map((step, index) => {
                             return <Step key={step.label}>
                                 {!step.substeps &&

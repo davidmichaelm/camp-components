@@ -1,4 +1,4 @@
-import {CardContent, CardActions, Button, Box} from "@mui/material";
+import {Button, Box} from "@mui/material";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import React from "react";
@@ -36,10 +36,9 @@ const FormStep = ({children, ...rest}) => {
             style={{width: '100%', ...style}}
             onSubmit={handleSubmit(onSubmit)}
             {...rest}>
-            <CardContent
+            <Box
                 sx={{
                     pt: 4,
-                    px: 5,
                     pb: 0,
                     display: 'flex',
                     flexDirection: 'column',
@@ -47,14 +46,13 @@ const FormStep = ({children, ...rest}) => {
                 }}>
                 {content}
                 {childInputs}
-            </CardContent>
-
-            <CardActions>
-                <Box sx={{ml: 'auto'}}>
-                    {showButtons.back && <Button onClick={handleBackClick}>Back</Button>}
-                    {showButtons.next && <Button type="submit">{submitText ? submitText : "Next"}</Button>}
+                <Box sx={{ml: 'auto', display: 'flex', gap: 1}}>
+                    {showButtons.back && <Button onClick={handleBackClick} size="large" variant="outlined">Back</Button>}
+                    {showButtons.next && <Button type="submit" size="large" variant="contained">{submitText ? submitText : "Next"}</Button>}
                 </Box>
-            </CardActions>
+            </Box>
+
+
         </form>
     );
 }
