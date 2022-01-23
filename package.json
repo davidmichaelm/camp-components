@@ -13,10 +13,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@parcel/transformer-react-refresh-wrap": "^2.0.1",
     "@sanity/client": "^2.21.7",
     "@sanity/image-url": "^1.0.1",
-    "parcel": "^2.1.1",
+    "parcel": "^2.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "storybook-css-modules-preset": "^1.1.1"

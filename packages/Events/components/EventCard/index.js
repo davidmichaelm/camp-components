@@ -1,7 +1,7 @@
 import React from "react";
 import * as styles from "./eventCard.module.css";
 import BlockContent from "@sanity/block-content-to-react";
-import {DateTime, Interval} from "luxon";
+import {isSameDay, isSameMonth, format} from "date-fns";
 import Skeleton, {SkeletonTheme} from "react-loading-skeleton";
 import {urlFor} from "@campphillip/common";
 
@@ -50,18 +50,16 @@ const EventCard = ({name, image, startDate, endDate, shortDescription, buttons, 
 function getDates(startDate, endDate) {
     if (!startDate || !endDate) return null;
 
-    startDate = DateTime.fromISO(startDate);
-    endDate = DateTime.fromISO(endDate);
+    startDate = new Date(startDate);
+    endDate = new Date(endDate);
 
-    const interval = Interval.fromDateTimes(startDate, endDate);
-
-    if (interval.start.hasSame(interval.end, 'day')) {
-        return interval.start.toFormat("MMMM d");
+    if (isSameDay(startDate, endDate)) {
+        return format(startDate, "MMMM d");
     } else {
-        if (interval.start.hasSame(interval.end, 'month')) {
-            return interval.start.toFormat("MMMM d") + " – " + interval.end.toFormat("d");
+        if (isSameMonth(startDate, endDate)) {
+            return format(startDate, "MMMM d") + " – " + format(endDate, "d");
         } else {
-            return interval.toFormat("MMMM d");
+            return format(startDate, "MMMM d") + " – " + format(endDate, "MMMM d");
         }
     }
 }
