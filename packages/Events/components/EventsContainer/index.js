@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import "regenerator-runtime/runtime";
 import * as styles from "../EventCard/eventCard.module.css";
 import EventCard from "../EventCard";
 
