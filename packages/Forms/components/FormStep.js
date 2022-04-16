@@ -39,7 +39,7 @@ const FormStep = ({children, ...rest}) => {
             <Box
                 sx={{
                     pt: 4,
-                    pb: 0,
+                    pb: 3,
                     display: 'flex',
                     flexDirection: 'column',
                     gap: 2
