@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import {BoardApplication} from './';
 import {createTheme, ThemeProvider} from '@mui/material'
 
@@ -25,11 +25,11 @@ const theme = createTheme({
     }
 });
 
-ReactDOM.render(
+const root = createRoot(container);
+root.render(
     <React.StrictMode>
         <ThemeProvider theme={theme}>
             <BoardApplication/>
         </ThemeProvider>
-    </React.StrictMode>,
-    container
+    </React.StrictMode>
 );
