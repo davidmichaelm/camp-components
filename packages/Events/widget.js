@@ -1,10 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import EventContainer from './components/EventsContainer';
 
-ReactDOM.render(
+const container = document.getElementById('camp-events');
+const root = createRoot(container);
+root.render(
     <React.StrictMode>
         <EventContainer />
-    </React.StrictMode>,
-    document.getElementById('camp-events')
+    </React.StrictMode>
 );

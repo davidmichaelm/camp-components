@@ -1,10 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import BannerContainer from './components/BannerContainer';
 
-ReactDOM.render(
+const container = document.getElementById('camp-banners');
+const root = createRoot(container);
+root.render(
     <React.StrictMode>
         <BannerContainer />
-    </React.StrictMode>,
-    document.getElementById('camp-banners')
+    </React.StrictMode>
 );
