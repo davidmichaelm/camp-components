@@ -3,7 +3,7 @@ import * as styles from "../EventCard/eventCard.module.css";
 import EventCard from "../EventCard";
 
 const EventContainer = () => {
-    const [events, setEvents] = useState([null, null]);
+    const [events, setEvents] = useState([null, null, null]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
