@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Code Snippet</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <!-- Copy the contents of the body tag into the desired page. -->
+
+    <body>
+        <link rel="stylesheet" href="https://unpkg.com/@campphillip/events@2.1.0/dist/widget.css" />
+        <style>
+            .appContainer {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .eventsContainer {
+                background: rgba(254, 209, 54, 0.75);
+                display: flex;
+                height: 660px;
+                flex-direction: column;
+                width: 100%;
+                padding-bottom: 20px;
+                position: relative;
+            }
+
+            @media only screen and (min-width: 1000px) {
+                .appContainer {
+                    margin: 20px;
+                }
+
+                .eventsContainer {
+                    width: 90%;
+                    border-radius: 4px;
+                    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+                }
+            }
+        </style>
+
+        <div id="camp-events" class="appContainer">
+            <div class="eventsContainer"></div>
+        </div>
+
+        <script>
+            const src = "https://unpkg.com/@campphillip/events@2.1.0/dist/widget.js";
+            const campEventsScript = document.createElement('script');
+
+            campEventsScript.onload = () => {
+                const campEvents = document.getElementById("camp-events");
+                campEvents.removeAttribute('class');
+            };
+            campEventsScript.src = src;
+
+            document.body.appendChild(campEventsScript);
+        </script>
+    </body>
+</html>
