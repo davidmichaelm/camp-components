@@ -5,12 +5,12 @@ import {isSameDay, isSameMonth, format} from "date-fns";
 import Skeleton, {SkeletonTheme} from "react-loading-skeleton";
 import {urlFor} from "@campphillip/common";
 
-const EventCard = ({name, image, startDate, endDate, shortDescription, buttons, loading}) => {
+const EventCard = ({name, image, startDate, endDate, shortDescription, buttons, loading, containerStyle}) => {
     const dates = getDates(startDate, endDate);
 
     return (
         <SkeletonTheme color={"#dcdcdc"}>
-            <div className={styles.eventCard}>
+            <div className={styles.eventCard} style={{...containerStyle}}>
                 {image ?
                     <img src={urlFor(image).height(230).url()} className={styles.image} crossOrigin={"anonymous"} alt={""}/>
                     : <Skeleton height={230}/>

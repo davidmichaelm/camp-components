@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import * as styles from "../EventCard/eventCard.module.css";
 import EventCard from "../EventCard";
+import {isSafari} from 'react-device-detect';
 
 const EventContainer = () => {
     const [events, setEvents] = useState([null, null, null]);
@@ -37,7 +38,14 @@ const EventContainer = () => {
                 <div className={styles.eventsContainer}>
                     {
                         events.map((event, index) => {
-                            return <EventCard {...event} key={index} loading={loading} />;
+                            return <EventCard
+                                {...event}
+                                key={index}
+                                loading={loading}
+                                containerStyle={index === events.length - 1 && isSafari && {
+                                    marginRight: '40px'
+                                }}
+                            />;
                         })
                     }
                 </div>
