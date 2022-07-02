@@ -63,6 +63,8 @@ p {
 
 .calendarButton:hover {
     background: #3e7bd7;
+    color: white;
+    text-decoration: none;
 }
 
 
