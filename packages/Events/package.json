@@ -1,7 +1,7 @@
 {
   "name": "@campphillip/events",
   "context": "browser",
-  "version": "2.1.8",
+  "version": "2.1.9",
   "description": "",
   "type": "module",
   "main": "dist/index.js",
