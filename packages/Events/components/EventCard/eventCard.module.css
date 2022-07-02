@@ -182,7 +182,7 @@ p {
         padding-bottom: 20px !important;
     }
 
-    .eventsContainer::before, .eventsContainer::after {
+    .eventsContainer::before {
         content:'';
         display:block;
         position:absolute;
@@ -192,19 +192,13 @@ p {
         height:100%;
         pointer-events: none;
         z-index: 1;
+
+        box-shadow: inset -20px 0 10px 0 rgb(254 221 110),
+                    inset 20px 0 10px 0 rgb(254 221 110);
     }
 
-    .eventsContainer::before {
-        box-shadow: inset -20px 0 10px 0 rgb(254 221 110);
-    }
-
-    .eventsContainer::after {
-        box-shadow: inset 20px 0 10px 0 rgb(254 221 110);
-    }
-
-    .eventCard {
-        min-width: 400px;
-        width: 400px;
+    .eventsContainer > * {
+        flex: 1 0 400px;
     }
 }
 
@@ -214,6 +208,7 @@ p {
         max-width: 1440px;
         overflow: auto;
         margin: 20px;
+        padding: 1px;
         border-radius: 9px;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     }
@@ -238,16 +233,10 @@ p {
         gap: 30px;
     }
 
-    .eventsContainer::before, .eventsContainer::after {
-        border-radius: 9px;
-    }
-
     .eventsContainer::before {
-        box-shadow: inset -4em 0 10px 0 rgb(254 221 110);
-    }
-
-    .eventsContainer::after {
-        box-shadow: inset 4em 0 10px 0 rgb(254 221 110);
+        border-radius: 9px;
+        box-shadow: inset -40px 0 10px 0 rgb(254 221 110),
+                    inset 40px 0 10px 0 rgb(254 221 110);
     }
 }
 
@@ -262,5 +251,10 @@ p {
 
     .eventsContainer {
         gap: 40px;
+    }
+
+    .eventsContainer::before {
+        box-shadow: inset -4em 0 10px 0 rgb(254 221 110),
+                    inset 4em 0 10px 0 rgb(254 221 110);
     }
 }
