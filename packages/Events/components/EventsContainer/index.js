@@ -7,7 +7,11 @@ const EventContainer = () => {
     const [events, setEvents] = useState([null, null, null]);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
+    const containerStyles = styles.eventsContainer + (isSafari
+        ? ' ' + styles.eventsContainerSafari
+        : '');
+
+        useEffect(() => {
         const fetchEvents = async () => {
             const groq = `*[_type == 'event' && active == true]  | order(startDate asc)
             {
@@ -45,16 +49,13 @@ const EventContainer = () => {
                         </svg>
                     </a>
                 </div>
-                <div className={styles.eventsContainer}>
+                <div className={containerStyles}>
                     {
                         events.map((event, index) => {
                             return <EventCard
                                 {...event}
                                 key={index}
                                 loading={loading}
-                                containerStyle={index === events.length - 1 && isSafari && {
-                                    marginRight: '40px'
-                                }}
                             />;
                         })
                     }

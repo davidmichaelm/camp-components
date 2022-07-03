@@ -179,7 +179,7 @@ p {
 
     .eventsContainer {
         flex-direction: row;
-        overflow: auto;
+        overflow-x: scroll;
         padding-top: 5px !important;
         padding-bottom: 20px !important;
     }
@@ -238,7 +238,12 @@ p {
     .eventsContainer::before {
         border-radius: 9px;
         box-shadow: inset -40px 0 10px 0 rgb(254 221 110),
-                    inset 40px 0 10px 0 rgb(254 221 110);
+        inset 40px 0 10px 0 rgb(254 221 110);
+    }
+
+    .eventsContainerSafari > *:last-child {
+        flex: 1 0 440px;
+        padding-right: 40px;
     }
 }
 
@@ -258,5 +263,10 @@ p {
     .eventsContainer::before {
         box-shadow: inset -4em 0 10px 0 rgb(254 221 110),
                     inset 4em 0 10px 0 rgb(254 221 110);
+    }
+
+    .eventsContainerSafari > *:last-child {
+        flex: 1 0 400px;
+        padding-right: 0;
     }
 }
