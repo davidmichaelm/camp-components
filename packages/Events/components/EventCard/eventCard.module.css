@@ -179,7 +179,7 @@ p {
 
     .eventsContainer {
         flex-direction: row;
-        overflow-x: scroll;
+        overflow: auto;
         padding-top: 5px !important;
         padding-bottom: 20px !important;
     }
