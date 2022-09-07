@@ -79,7 +79,7 @@ p {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 520px;
+    min-height: 520px;
 
     background: rgba(255, 254, 240, 1);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -110,7 +110,7 @@ p {
     display: flex;
     flex-direction: column;
     height: 100%;
-    margin: 15px 15px 0 15px !important;
+    margin: 15px !important;
     font-size: 14px;
     line-height: unset !important;
 }
@@ -200,7 +200,11 @@ p {
     }
 
     .eventsContainer > * {
-        flex: 1 0 400px;
+        flex: 0 0 375px;
+    }
+
+    .eventCard {
+        height: 520px;
     }
 }
 
@@ -232,7 +236,7 @@ p {
     }
 
     .eventsContainer {
-        gap: 30px;
+        gap: 20px;
     }
 
     .eventsContainer::before {
@@ -242,8 +246,12 @@ p {
     }
 
     .eventsContainerSafari > *:last-child {
-        flex: 1 0 440px;
+        flex: 0 0 400px;
         padding-right: 40px;
+    }
+
+    .twoChildren {
+        justify-content: center;
     }
 }
 
@@ -256,17 +264,20 @@ p {
         font-size: 54px;
     }
 
-    .eventsContainer {
-        gap: 40px;
-    }
-
     .eventsContainer::before {
         box-shadow: inset -4em 0 10px 0 rgb(254 221 110),
                     inset 4em 0 10px 0 rgb(254 221 110);
     }
 
     .eventsContainerSafari > *:last-child {
-        flex: 1 0 400px;
+        flex: 0 0 375px;
+        padding-right: 0;
+
+    }
+}
+
+@media only screen and (min-width: 1550px) {
+    .eventsContainerSafari > *:last-child {
         padding-right: 0;
     }
 }

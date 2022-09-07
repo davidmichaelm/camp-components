@@ -7,9 +7,13 @@ const EventContainer = () => {
     const [events, setEvents] = useState([null, null, null]);
     const [loading, setLoading] = useState(true);
 
-    const containerStyles = styles.eventsContainer + (isSafari
-        ? ' ' + styles.eventsContainerSafari
-        : '');
+    let containerStyles = styles.eventsContainer;
+    
+    if (isSafari)
+        containerStyles += ' ' + styles.eventsContainerSafari;
+
+    if (events.length == 2)
+        containerStyles += ' ' + styles.twoChildren;
 
         useEffect(() => {
         const fetchEvents = async () => {
