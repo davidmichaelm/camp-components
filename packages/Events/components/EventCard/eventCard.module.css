@@ -200,7 +200,11 @@ p {
     }
 
     .eventsContainer > * {
-        flex: 0 0 375px;
+        flex: 1 1 375px;
+    }
+
+    .threePlusChildren > * {
+        flex: 1 0 375px;
     }
 
     .eventCard {
@@ -246,7 +250,7 @@ p {
     }
 
     .eventsContainerSafari > *:last-child {
-        flex: 0 0 400px;
+        flex-basis: 415px;
         padding-right: 40px;
     }
 
@@ -270,9 +274,12 @@ p {
     }
 
     .eventsContainerSafari > *:last-child {
-        flex: 0 0 375px;
+        flex-basis: 375px;
         padding-right: 0;
+    }
 
+    .noShadow::before {
+        box-shadow: none !important;
     }
 }
 

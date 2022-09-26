@@ -12,8 +12,17 @@ const EventContainer = () => {
     if (isSafari)
         containerStyles += ' ' + styles.eventsContainerSafari;
 
-    if (events.length == 2)
+    if (events.length === 2)
         containerStyles += ' ' + styles.twoChildren;
+
+    if (events.length === 3)
+        containerStyles += ' ' + styles.noShadow;
+
+    if (events.length >= 3)
+        containerStyles += ' ' + styles.threePlusChildren;
+
+        console.log(containerStyles)
+
 
         useEffect(() => {
         const fetchEvents = async () => {
