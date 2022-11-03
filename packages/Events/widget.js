@@ -1,6 +1,6 @@
 import React from 'react';
-import {createRoot} from 'react-dom/client';
-import EventContainer from './components/EventsContainer';
+import { createRoot } from 'react-dom/client';
+import { EventContainer } from './components/EventContainer';
 
 const container = document.getElementById('camp-events');
 const root = createRoot(container);

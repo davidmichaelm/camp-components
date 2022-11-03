@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import * as styles from "../EventCard/eventCard.module.css";
-import EventCard from "../EventCard";
-import {isSafari} from 'react-device-detect';
+import { EventCard } from "../EventCard";
+import { isSafari } from 'react-device-detect';
 
-const EventContainer = () => {
+export const EventContainer = () => {
     const [events, setEvents] = useState([null, null, null]);
     const [loading, setLoading] = useState(true);
 
     let containerStyles = styles.eventsContainer;
-    
+
     if (isSafari)
         containerStyles += ' ' + styles.eventsContainerSafari;
 
@@ -21,10 +21,10 @@ const EventContainer = () => {
     if (events.length >= 3)
         containerStyles += ' ' + styles.threePlusChildren;
 
-        console.log(containerStyles)
+    console.log(containerStyles)
 
 
-        useEffect(() => {
+    useEffect(() => {
         const fetchEvents = async () => {
             const groq = `*[_type == 'event' && active == true]  | order(startDate asc)
             {
@@ -53,8 +53,8 @@ const EventContainer = () => {
                     <a className={styles.calendarButton} href="/calendar">
                         Check out our calendar
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                             className="feather feather-calendar">
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            className="feather feather-calendar">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                             <line x1="16" y1="2" x2="16" y2="6"></line>
                             <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -77,5 +77,3 @@ const EventContainer = () => {
         </div>
     );
 }
-
-export default EventContainer;
