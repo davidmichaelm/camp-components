@@ -132,9 +132,3 @@
         flex: 0 1 calc(50% - 0.5em);
     }
 }
-
-@media (min-width: 1200px) {
-    .eventCard {
-        height: 300px;
-    }
-}
