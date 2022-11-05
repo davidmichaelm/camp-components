@@ -17,6 +17,10 @@
     line-height: unset !important;
 }
 
+.eventCardBody p {
+    line-height: unset !important;
+}
+
 .image {
     object-fit: cover;
     flex: 1 0 33%;
