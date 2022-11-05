@@ -1,28 +1,10 @@
-import React, { useEffect, useState } from "react";
-import * as styles from "../EventCard/eventCard.module.css";
+import { useEffect, useState } from "react";
+import * as styles from "./EventContainer.module.css";
 import { EventCard } from "../EventCard";
-import { isSafari } from 'react-device-detect';
 
 export const EventContainer = () => {
     const [events, setEvents] = useState([null, null, null]);
     const [loading, setLoading] = useState(true);
-
-    let containerStyles = styles.eventsContainer;
-
-    if (isSafari)
-        containerStyles += ' ' + styles.eventsContainerSafari;
-
-    if (events.length === 2)
-        containerStyles += ' ' + styles.twoChildren;
-
-    if (events.length === 3)
-        containerStyles += ' ' + styles.noShadow;
-
-    if (events.length >= 3)
-        containerStyles += ' ' + styles.threePlusChildren;
-
-    console.log(containerStyles)
-
 
     useEffect(() => {
         const fetchEvents = async () => {
@@ -62,7 +44,7 @@ export const EventContainer = () => {
                         </svg>
                     </a>
                 </div>
-                <div className={containerStyles}>
+                <div className={styles.eventsContainer}>
                     {
                         events.map((event, index) => {
                             return <EventCard

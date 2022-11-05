@@ -1,97 +1,27 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto Slab', serif;
-    margin: 0;
-}
-
-p {
-    margin: 0;
-}
-
-.appContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: rgb(51, 51, 51)
-}
-
-.campEventsApp {
-    background: rgba(254, 209, 54, 0.75);
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-bottom: 20px;
-    position: relative;
-}
-
-.campEventsApp > div {
-    padding: 0 10px;
-}
-
-.eventsHeader {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 25px 0;
-    gap: 1em;
-    z-index: 5;
-}
-
-.eventsHeader h1 {
-    margin: 0;
-    font-size: 28px;
-    font-family: 'Roboto Slab', serif;
-    text-transform: unset !important;
-}
-
-.calendarButton {
-    text-decoration: none;
-    background: #5388D7;
-    padding: 0.5em 0.75em;
-    color: white;
-    border-radius: 4px;
-    flex-grow: 0;
-
-    font-size: 16px;
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-}
-
-.calendarButton:hover {
-    background: #3e7bd7;
-    color: white;
-    text-decoration: none;
-}
-
-
-.eventsContainer {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 15px;
-    gap: 20px;
-}
-
 .eventCard {
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 520px;
 
     background: rgba(255, 254, 240, 1);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
 }
 
-.eventCard > span {
-    line-height: 1;
+.eventCardBody {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em !important;
+    font-size: 14px;
+    line-height: unset !important;
 }
 
-.eventCardHeader {
-    margin: 15px 15px 0 15px;
+.image {
+    object-fit: cover;
+    flex: 1 0 33%;
+    width: 100%;
+    border-radius: 4px 4px 0 0;
 }
 
 .eventCardTitle {
@@ -106,37 +36,22 @@ p {
     font-size: 18px;
 }
 
-.eventCardBody {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: 15px !important;
-    font-size: 14px;
-    line-height: unset !important;
+.eventCardDescription {
+    font-size: 16px;
 }
 
-.eventCardBody p {
-    line-height: unset !important;
-}
-
-.image {
-    width: 100%;
-    min-height: 230px;
-    max-height: 230px;
-    border-radius: 4px 4px 0 0;
-    object-fit: cover;
-}
 
 .eventButtons {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
-    margin: auto 15px 15px 15px;
     display: flex;
     flex-direction: row;
+    gap: 1em;
+    margin-top: 0.5em;
 }
 
-.eventButtons > span {
+.eventButtons>span {
     width: 100%;
 }
 
@@ -146,10 +61,9 @@ p {
 
 .eventButton {
     flex: 1;
-    margin: 0 5px;
     background: #5388D7;
     color: white;
-    padding: 10px 0;
+    padding: 1em;
     text-align: center;
     border-radius: 4px;
 }
@@ -159,132 +73,64 @@ p {
     background-color: #3E7BD7;
 }
 
-@media only screen and (min-width: 550px) {
-    .campEventsApp > div {
-        padding: 0 20px;
+@media (min-width: 550px) {
+    .image {
+        max-height: 400px;
     }
 
-    .eventsHeader {
-        margin: 35px 0;
+    .eventCardBody {
+        padding: 1.5em !important;
     }
 
-    .eventsHeader h1 {
-        font-size: 48px;
+    .eventCardTitle {
+        font-size: 28px;
     }
 
-    .calendarButton {
-        padding: 0.75em 1em;
+    .eventCardDate {
         font-size: 20px;
     }
 
-    .eventsContainer {
-        flex-direction: row;
-        overflow: auto;
-        padding-top: 5px !important;
-        padding-bottom: 20px !important;
+    .eventCardDescription {
+        font-size: 20px;
     }
 
-    .eventsContainer::before {
-        content:'';
-        display:block;
-        position:absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        pointer-events: none;
-        z-index: 1;
+}
 
-        box-shadow: inset -20px 0 10px 0 rgb(254 221 110),
-                    inset 20px 0 10px 0 rgb(254 221 110);
-    }
-
-    .eventsContainer > * {
-        flex: 1 1 375px;
-    }
-
-    .threePlusChildren > * {
-        flex: 1 0 375px;
-    }
-
+@media (min-width: 800px) {
     .eventCard {
-        height: 520px;
-    }
-}
-
-@media only screen and (min-width: 1000px) {
-    .campEventsApp {
-        width: 90%;
-        max-width: 1440px;
-        overflow: auto;
-        margin: 20px;
-        padding: 1px 1px 1em 1px;
-        border-radius: 9px;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    }
-
-    .eventsHeader {
-        flex-wrap: wrap;
         flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        margin: 30px 0;
     }
 
-    .eventsHeader h1 {
-        font-size: 54px;
+    .image {
+        width: 200px;
+        border-radius: 4px 0 0 4px;
     }
 
-    .campEventsApp > div {
-        padding: 0 40px;
+    .eventCardTitle {
+        font-size: 32px;
     }
 
-    .eventsContainer {
-        gap: 20px;
+    .eventCardDescription {
+        font-size: 20px;
     }
 
-    .eventsContainer::before {
-        border-radius: 9px;
-        box-shadow: inset -40px 0 10px 0 rgb(254 221 110),
-        inset 40px 0 10px 0 rgb(254 221 110);
+    .eventButtons {
+        justify-content: flex-end;
+        margin-top: auto;
+
     }
 
-    .eventsContainerSafari > *:last-child {
-        flex-basis: 415px;
-        padding-right: 40px;
+    .eventButton {
+        flex: 0 1 50%;
     }
 
-    .twoChildren {
-        justify-content: center;
+    .eventButton:only-child {
+        flex: 0 1 calc(50% - 0.5em);
     }
 }
 
-@media only screen and (min-width: 1440px) {
-    .campEventsApp > div {
-        padding: 0 4em;
-    }
-
-    .eventsHeader h1 {
-        font-size: 54px;
-    }
-
-    .eventsContainer::before {
-        box-shadow: inset -4em 0 10px 0 rgb(254 221 110),
-                    inset 4em 0 10px 0 rgb(254 221 110);
-    }
-
-    .eventsContainerSafari > *:last-child {
-        flex-basis: 375px;
-        padding-right: 0;
-    }
-
-    .noShadow::before {
-        box-shadow: none !important;
-    }
-}
-
-@media only screen and (min-width: 1550px) {
-    .eventsContainerSafari > *:last-child {
-        padding-right: 0;
+@media (min-width: 1200px) {
+    .eventCard {
+        height: 300px;
     }
 }

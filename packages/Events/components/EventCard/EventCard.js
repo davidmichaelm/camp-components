@@ -1,5 +1,4 @@
-import React from "react";
-import * as styles from "./eventCard.module.css";
+import * as styles from "./EventCard.module.css";
 import BlockContent from "@sanity/block-content-to-react";
 import { isSameDay, isSameMonth, format } from "date-fns";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
@@ -12,35 +11,35 @@ export const EventCard = ({ name, image, startDate, endDate, shortDescription, b
         <SkeletonTheme color={"#dcdcdc"}>
             <div className={styles.eventCard} style={{ ...containerStyle }}>
                 {image ?
-                    <img src={urlFor(image).height(230).url()} className={styles.image} crossOrigin={"anonymous"} alt={""} />
+                    <img src={urlFor(image).height(400).url()} className={styles.image} crossOrigin={"anonymous"} alt={""} />
                     : <Skeleton height={230} />
                 }
-
-                <div className={styles.eventCardHeader}>
-                    <h3 className={styles.eventCardTitle}>{name || <Skeleton />}</h3>
-                    <div className={styles.eventCardDate}>{dates || <Skeleton />}</div>
-                </div>
-
                 <div className={styles.eventCardBody}>
-                    {shortDescription ?
-                        <BlockContent blocks={shortDescription} />
-                        : <Skeleton count={7} />
-                    }
-                </div>
+                    <div className={styles.eventCardHeader}>
+                        <h3 className={styles.eventCardTitle}>{name || <Skeleton />}</h3>
+                        <div className={styles.eventCardDate}>{dates || <Skeleton />}</div>
+                    </div>
 
-                <div className={styles.eventButtons}>
-                    {buttons ?
-                        (buttons.map(({ url, text }, i) => {
-                            return (
-                                <a href={url} key={i} className={styles.eventButton}>
-                                    <div>{text}</div>
-                                </a>
-                            )
-                        }))
-                        : loading ?
+                    <div className={styles.eventCardDescription}>
+                        {shortDescription ?
+                            <BlockContent blocks={shortDescription} />
+                            : <Skeleton count={7} />
+                        }
+                    </div>
+
+                    <div className={styles.eventButtons}>
+                        {buttons ?
+                            (buttons.map(({ url, text }, i) => {
+                                return (
+                                    <a href={url} key={i} className={styles.eventButton}>
+                                        <div>{text}</div>
+                                    </a>
+                                )
+                            }))
+                            : loading &&
                             <Skeleton className={styles.eventButton} />
-                            : <></>
-                    }
+                        }
+                    </div>
                 </div>
             </div>
         </SkeletonTheme>
