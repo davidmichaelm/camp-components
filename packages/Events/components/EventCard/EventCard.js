@@ -15,7 +15,7 @@ export const EventCard = ({ name, image, startDate, endDate, shortDescription, b
                     : <Skeleton height={230} />
                 }
                 <div className={styles.eventCardBody}>
-                    <div className={styles.eventCardHeader}>
+                    <div>
                         <h3 className={styles.eventCardTitle}>{name || <Skeleton />}</h3>
                         <div className={styles.eventCardDate}>{dates || <Skeleton />}</div>
                     </div>
