@@ -8,9 +8,8 @@ export const EventContainer = () => {
 
     useEffect(() => {
         const fetchEvents = async () => {
-            const groq = `*[_type == 'event' && active == true]  | order(startDate asc)
+            const groq = `*[_type == 'event']  | order(startDate asc)
             {
-                active,
                 name,
                 image,
                 startDate,
