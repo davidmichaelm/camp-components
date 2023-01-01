@@ -1,6 +1,6 @@
 import React from 'react';
-import {createRoot} from 'react-dom/client';
-import BannerContainer from './components/BannerContainer';
+import { createRoot } from 'react-dom/client';
+import { BannerContainer } from './components';
 
 const container = document.getElementById('camp-banners');
 const root = createRoot(container);
