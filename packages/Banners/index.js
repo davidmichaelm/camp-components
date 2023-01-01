@@ -1,5 +1,4 @@
-import BannerContainer from "./components/BannerContainer";
-import Banner from "./components/Banner";
+import { BannerContainer, Banner } from "./components";
 
 export {
     BannerContainer,
