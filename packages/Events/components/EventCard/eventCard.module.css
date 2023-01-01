@@ -9,6 +9,7 @@
 }
 
 .eventCardBody {
+    flex: 1 1 66%;
     display: flex;
     flex-direction: column;
     gap: 1em;

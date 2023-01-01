@@ -12,7 +12,7 @@ export const EventCard = ({ name, image, startDate, endDate, shortDescription, b
             <div className={styles.eventCard} style={{ ...containerStyle }}>
                 {image ?
                     <img src={urlFor(image).height(400).url()} className={styles.image} crossOrigin={"anonymous"} alt={""} />
-                    : <Skeleton height={230} />
+                    : <div className={styles.image}><Skeleton height={400} /></div>
                 }
                 <div className={styles.eventCardBody}>
                     <div>
