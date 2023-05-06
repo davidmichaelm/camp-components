@@ -1,25 +1,26 @@
 {
-  "name": "@campphillip/common",
-  "version": "2.1.14",
-  "description": "",
-  "type": "module",
-  "source": "index.js",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "David Marquardt",
-  "license": "ISC",
-  "dependencies": {
-    "@sanity/client": "^2.21.7",
-    "@sanity/image-url": "^1.0.1"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "dist"
-  ],
-  "gitHead": "5db7bd7ae2a2ad4aed826d97a345c6bd4dd4c611"
+    "name": "@campphillip/common",
+    "version": "2.1.14",
+    "description": "",
+    "type": "module",
+    "source": "index.js",
+    "main": "dist/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "parcel build"
+    },
+    "keywords": [],
+    "author": "David Marquardt",
+    "license": "ISC",
+    "dependencies": {
+        "@sanity/client": "^2.21.7",
+        "@sanity/image-url": "^1.0.1"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "dist"
+    ],
+    "gitHead": "5db7bd7ae2a2ad4aed826d97a345c6bd4dd4c611"
 }
