@@ -1,58 +1,59 @@
 {
-  "name": "@campphillip/events",
-  "context": "browser",
-  "version": "2.2.6",
-  "description": "",
-  "type": "module",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel widget.html"
-  },
-  "author": "David Marquardt",
-  "license": "ISC",
-  "dependencies": {
-    "@campphillip/common": "^2.1.14",
-    "@parcel/transformer-react-refresh-wrap": "^2.2.1",
-    "@sanity/block-content-to-react": "^3.0.0",
-    "@sanity/client": "^2.21.7",
-    "@sanity/image-url": "^1.0.1",
-    "@swc/helpers": "^0.2.13",
-    "date-fns": "^2.28.0",
-    "parcel": "^2.2.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-loading-skeleton": "^2.2.0",
-    "regenerator-runtime": "^0.13.9"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all",
-      "not supports es6-module"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "targets": {
-    "widget": {
-      "source": "widget.js",
-      "sourceMap": false
+    "name": "@campphillip/events",
+    "context": "browser",
+    "version": "2.2.6",
+    "description": "",
+    "type": "module",
+    "main": "dist/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "parcel widget.html",
+        "build": "parcel build"
     },
-    "main": {
-      "source": "index.js",
-      "sourceMap": true
-    }
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "dist"
-  ],
-  "gitHead": "5db7bd7ae2a2ad4aed826d97a345c6bd4dd4c611"
+    "author": "David Marquardt",
+    "license": "ISC",
+    "dependencies": {
+        "@campphillip/common": "^2.1.14",
+        "@parcel/transformer-react-refresh-wrap": "^2.2.1",
+        "@sanity/block-content-to-react": "^3.0.0",
+        "@sanity/client": "^2.21.7",
+        "@sanity/image-url": "^1.0.1",
+        "@swc/helpers": "^0.2.13",
+        "date-fns": "^2.28.0",
+        "parcel": "^2.2.1",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "react-loading-skeleton": "^2.2.0",
+        "regenerator-runtime": "^0.13.9"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all",
+            "not supports es6-module"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "targets": {
+        "widget": {
+            "source": "widget.js",
+            "sourceMap": false
+        },
+        "main": {
+            "source": "index.js",
+            "sourceMap": true
+        }
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "dist"
+    ],
+    "gitHead": "5db7bd7ae2a2ad4aed826d97a345c6bd4dd4c611"
 }
