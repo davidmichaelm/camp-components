@@ -8,48 +8,60 @@ export interface RateTableProps {
 
 export const RateTable = (props: RateTableProps) => {
     const { rateTable } = props;
+
+    const rows = rateTable.map((rate: Rate | RateGroup) => {
+        if (rate.type === "rate") {
+            return (
+                <RateRow
+                    name={rate.name}
+                    value={rate.value}
+                    firstCellClassName={
+                        rateTable.some((r) => r.type === "rateGroup")
+                            ? styles["group-title"]
+                            : null
+                    }
+                    key={rate.name}
+                />
+            );
+        } else if (rate.type === "rateGroup") {
+            // key = rate.title;
+            return (
+                <React.Fragment key={rate.title}>
+                    <RateRow
+                        name={rate.title}
+                        firstCellClassName={styles["group-title"]}
+                    />
+                    {rate.rates.map((r) => (
+                        <RateRow
+                            name={r.name}
+                            value={r.value}
+                            firstCellClassName={styles["rate-group-child"]}
+                            key={r.name}
+                        />
+                    ))}
+                </React.Fragment>
+            );
+        }
+    });
+
     return (
         <table className={styles["rate-table"]}>
-            <tbody>
-                {rateTable.map((rate: Rate | RateGroup) => {
-                    let rateEl = <></>;
-                    let key;
-
-                    if (rate.type === "rate") {
-                        key = rate.name;
-                        rateEl = (
-                            <RateRow name={rate.name} value={rate.value} />
-                        );
-                    } else if (rate.type === "rateGroup") {
-                        key = rate.title;
-                        rateEl = (
-                            <>
-                                <td>{rate.title}</td>
-                                {rate.rates.map((r) => (
-                                    <RateRow name={r.name} value={r.value} />
-                                ))}
-                            </>
-                        );
-                    }
-
-                    return <tr key={key}>{rateEl}</tr>;
-                })}
-            </tbody>
+            <tbody>{rows}</tbody>
         </table>
     );
 };
 
 export interface RateRowProps {
     name: string;
-    value: string;
+    value?: string;
+    firstCellClassName?: string;
 }
 
-const RateRow = (props: RateRowProps) => {
-    const { name, value } = props;
+const RateRow = ({ name, value, firstCellClassName }: RateRowProps) => {
     return (
-        <>
-            <td>{name}</td>
+        <tr>
+            <td className={firstCellClassName}>{name}</td>
             <td>{value}</td>
-        </>
+        </tr>
     );
 };

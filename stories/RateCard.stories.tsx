@@ -25,7 +25,34 @@ export const Default: Story = {
 
 export const RateGroups: Story = {
     args: {
-        ...Default.args,
-        rateTable: [{ type: "rateGroup", title: "Family Cabins", rates: [] }],
+        heading: "Cabins",
+        rateTable: [
+            {
+                type: "rateGroup",
+                title: "Family Cabins",
+                rates: [
+                    {
+                        type: "rate",
+                        name: "May - September",
+                        value: "$45.00/night",
+                    },
+                    {
+                        type: "rate",
+                        name: "October - April",
+                        value: "$50.00/night",
+                    },
+                ],
+            },
+            {
+                type: "rate",
+                name: "Quad Units",
+                value: "$60.00/night + \n $15/additional person over 4 people",
+            },
+            {
+                type: "rate",
+                name: "Group prices",
+                value: "$15/person/night",
+            },
+        ],
     },
 };

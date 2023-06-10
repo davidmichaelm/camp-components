@@ -2,6 +2,7 @@
     width: 100%;
     border-spacing: 0;
     font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    white-space: pre-line;
 }
 
 .rate-table tr:nth-child(odd) {
@@ -28,4 +29,12 @@
 
 .rate-table td:last-of-type {
     text-align: right;
+}
+
+.rate-table .group-title {
+    font-weight: bold;
+}
+
+.rate-table .rate-group-child {
+    padding-left: 20px;
 }
