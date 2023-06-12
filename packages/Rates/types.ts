@@ -10,4 +10,10 @@ export interface RateGroup {
     rates: Rate[];
 }
 
-export type RateTableType = (Rate | RateGroup)[];
+export interface RateDescription {
+    type: "rateDescription";
+    title?: string;
+    text: string;
+}
+
+export type RateTableType = Rate | RateGroup | RateDescription;

@@ -1,21 +1,23 @@
 import React from "react";
-import { Rate, RateGroup, RateTableType } from "../../types";
+import { RateTableType } from "../../types";
+import { RateRow } from "../RateRow";
 import styles from "./RateTable.module.css";
+import { Rate } from "../Rate";
+import { RateGroup } from "../RateGroup";
 
 export interface RateTableProps {
-    rateTable: RateTableType;
+    rateTable: RateTableType[];
 }
 
 export const RateTable = (props: RateTableProps) => {
     const { rateTable } = props;
 
-    const rows = rateTable.map((rate: Rate | RateGroup) => {
+    const rows = rateTable.map((rate: RateTableType) => {
         if (rate.type === "rate") {
             return (
-                <RateRow
-                    name={rate.name}
-                    value={rate.value}
-                    firstCellClassName={
+                <Rate
+                    rate={rate}
+                    className={
                         rateTable.some((r) => r.type === "rateGroup")
                             ? styles["group-title"]
                             : null
@@ -24,23 +26,7 @@ export const RateTable = (props: RateTableProps) => {
                 />
             );
         } else if (rate.type === "rateGroup") {
-            // key = rate.title;
-            return (
-                <React.Fragment key={rate.title}>
-                    <RateRow
-                        name={rate.title}
-                        firstCellClassName={styles["group-title"]}
-                    />
-                    {rate.rates.map((r) => (
-                        <RateRow
-                            name={r.name}
-                            value={r.value}
-                            firstCellClassName={styles["rate-group-child"]}
-                            key={r.name}
-                        />
-                    ))}
-                </React.Fragment>
-            );
+            return <RateGroup rateGroup={rate} key={rate.title} />;
         }
     });
 
@@ -48,20 +34,5 @@ export const RateTable = (props: RateTableProps) => {
         <table className={styles["rate-table"]}>
             <tbody>{rows}</tbody>
         </table>
-    );
-};
-
-export interface RateRowProps {
-    name: string;
-    value?: string;
-    firstCellClassName?: string;
-}
-
-const RateRow = ({ name, value, firstCellClassName }: RateRowProps) => {
-    return (
-        <tr>
-            <td className={firstCellClassName}>{name}</td>
-            <td>{value}</td>
-        </tr>
     );
 };

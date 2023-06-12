@@ -31,10 +31,6 @@
     text-align: right;
 }
 
-.rate-table .group-title {
+.group-title > td:first-child {
     font-weight: bold;
-}
-
-.rate-table .rate-group-child {
-    padding-left: 20px;
 }
