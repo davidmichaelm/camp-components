@@ -3,7 +3,6 @@ import { RateTableType } from "../../types";
 import styles from "./RateTable.module.css";
 import { Rate } from "../Rate";
 import { RateGroup } from "../RateGroup";
-import { RateDescription } from "../RateDescription";
 
 export interface RateTableProps {
     rateTable: RateTableType[];
@@ -27,8 +26,6 @@ export const RateTable = (props: RateTableProps) => {
             );
         } else if (rate.type === "rateGroup") {
             return <RateGroup rateGroup={rate} key={rate.title} />;
-        } else if (rate.type === "rateDescription") {
-            return <RateDescription rateDescription={rate} />;
         }
     });
 
