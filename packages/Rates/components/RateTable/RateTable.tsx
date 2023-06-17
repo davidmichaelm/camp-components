@@ -1,6 +1,6 @@
 import React from "react";
 import { RateTableType } from "../../types";
-import styles from "./RateTable.module.css";
+import * as styles from "./RateTable.module.css";
 import { Rate } from "../Rate";
 import { RateGroup } from "../RateGroup";
 

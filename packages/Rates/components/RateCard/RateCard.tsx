@@ -5,7 +5,7 @@ import {
     RateTableType,
 } from "../../types";
 import { RateTable } from "../RateTable";
-import styles from "./RateCard.module.css";
+import * as styles from "./RateCard.module.css";
 import { RateDescription } from "../RateDescription";
 
 export interface RateCardProps {

@@ -1,7 +1,7 @@
 import React from "react";
 import { RateRow } from "../RateRow";
 import { RateGroup as RateGroupType } from "../../types";
-import styles from "./RateGroup.module.css";
+import * as styles from "./RateGroup.module.css";
 
 export interface RateGroupProps {
     rateGroup: RateGroupType;

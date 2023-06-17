@@ -2,7 +2,7 @@
     "name": "@campphillip/rates",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "dist/index.js",
     "scripts": {
         "build": "parcel build"
     },
@@ -10,6 +10,18 @@
         "react": "^18.0.0",
         "react-dom": "^18.0.0"
     },
+    "targets": {
+        "main": {
+            "source": "index.ts",
+            "sourceMap": true
+        }
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "dist"
+    ],
     "author": "",
     "license": "ISC"
 }
