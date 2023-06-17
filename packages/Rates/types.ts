@@ -13,7 +13,9 @@ export interface RateGroup {
 export interface RateDescription {
     type: "rateDescription";
     title?: string;
-    text: string;
+    text?: string;
 }
 
-export type RateTableType = Rate | RateGroup | RateDescription;
+export type RateCardType = Rate | RateGroup | RateDescription;
+
+export type RateTableType = Exclude<RateCardType, "RateDescription">;

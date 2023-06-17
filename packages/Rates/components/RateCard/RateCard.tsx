@@ -1,16 +1,37 @@
 import React from "react";
-import { Rate, RateGroup } from "../../types";
+import {
+    RateCardType,
+    RateDescription as RateDescriptionType,
+    RateTableType,
+} from "../../types";
 import { RateTable } from "../RateTable";
 import styles from "./RateCard.module.css";
+import { RateDescription } from "../RateDescription";
 
 export interface RateCardProps {
     heading: string;
     subheading: string;
-    rateTable: (Rate | RateGroup)[];
+    rates: RateCardType[];
 }
 
 export const RateCard = (props: RateCardProps) => {
-    const { heading, subheading, rateTable } = props;
+    const { heading, subheading, rates } = props;
+
+    const groupedRates = rates.reduce<
+        (RateTableType[] | RateDescriptionType)[]
+    >((accumulator, currentValue) => {
+        if (currentValue.type === "rateDescription") {
+            return [...accumulator, currentValue];
+        } else {
+            const lastGroup = accumulator[accumulator.length - 1];
+            if (Array.isArray(lastGroup)) {
+                lastGroup.push(currentValue);
+                return accumulator;
+            } else {
+                return [...accumulator, [currentValue]];
+            }
+        }
+    }, []);
 
     return (
         <div className={styles["rate-card"]}>
@@ -19,7 +40,13 @@ export const RateCard = (props: RateCardProps) => {
                 <div className={styles["rate-card-subheading"]}>
                     {subheading}
                 </div>
-                <RateTable rateTable={rateTable} />
+                {groupedRates.map((g) => {
+                    if (Array.isArray(g)) {
+                        return <RateTable rateTable={g} />;
+                    } else {
+                        return <RateDescription rateDescription={g} />;
+                    }
+                })}
             </div>
         </div>
     );

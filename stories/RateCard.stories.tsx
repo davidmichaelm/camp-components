@@ -15,7 +15,7 @@ type Story = StoryObj<RateCardProps>;
 export const Default: Story = {
     args: {
         heading: "Campsites",
-        rateTable: [
+        rates: [
             { type: "rate", name: "A sites", value: "$22.00/family/night" },
             { type: "rate", name: "B sites", value: "$22.00/family/night" },
             { type: "rate", name: "C sites", value: "$22.00/family/night" },
@@ -26,7 +26,7 @@ export const Default: Story = {
 export const RateGroups: Story = {
     args: {
         heading: "Cabins",
-        rateTable: [
+        rates: [
             {
                 type: "rateGroup",
                 title: "Family Cabins",
@@ -52,6 +52,49 @@ export const RateGroups: Story = {
                 type: "rate",
                 name: "Group prices",
                 value: "$15/person/night",
+            },
+        ],
+    },
+};
+
+export const RateDescriptions: Story = {
+    args: {
+        heading: "Educational Field Trips (Schools)",
+        rates: [
+            {
+                type: "rateDescription",
+                title: "Overnight Trip",
+                text: "Included with this fee are 3 meals, 1 night lodging, and all programming.",
+            },
+            {
+                type: "rate",
+                name: "Weekday (Mon-Thurs) trip",
+                value: "$735 for up to 15 guests\n$49/additional guest",
+            },
+            {
+                type: "rate",
+                name: "High Ropes",
+                value: "$8/participant",
+            },
+            {
+                type: "rateDescription",
+                title: "Food Service",
+                text: "We prepare meals for 15 people at minimum.",
+            },
+            {
+                type: "rate",
+                name: "Breakfast",
+                value: "$8/participant",
+            },
+            {
+                type: "rate",
+                name: "Lunch",
+                value: "$8/participant",
+            },
+            {
+                type: "rate",
+                name: "Dinner",
+                value: "$8/participant",
             },
         ],
     },
