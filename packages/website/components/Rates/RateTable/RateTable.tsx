@@ -1,6 +1,5 @@
-import React from "react";
-import { RateTableType } from "../../types";
-import * as styles from "./RateTable.module.css";
+import { RateTableType } from "../types";
+import styles from "./RateTable.module.css";
 import { Rate } from "../Rate";
 import { RateGroup } from "../RateGroup";
 
@@ -12,20 +11,20 @@ export const RateTable = (props: RateTableProps) => {
     const { rateTable } = props;
 
     const rows = rateTable.map((rate: RateTableType) => {
-        if (rate.type === "rate") {
+        if (rate._type === "rate") {
             return (
                 <Rate
                     rate={rate}
                     className={
-                        rateTable.some((r) => r.type === "rateGroup")
+                        rateTable.some((r) => r._type === "rateGroup")
                             ? styles["group-title"]
-                            : null
+                            : ""
                     }
                     key={rate.name}
                 />
             );
-        } else if (rate.type === "rateGroup") {
-            return <RateGroup rateGroup={rate} key={rate.title} />;
+        } else if (rate._type === "rateGroup") {
+            return <RateGroup rateGroup={rate} key={rate.name} />;
         }
     });
 

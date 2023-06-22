@@ -3,8 +3,9 @@
     "version": "2.1.14",
     "description": "",
     "type": "module",
-    "source": "index.js",
+    "source": "index.ts",
     "main": "dist/index.js",
+    "types": "dist/types.d.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "parcel build"
@@ -22,5 +23,8 @@
     "files": [
         "dist"
     ],
-    "gitHead": "5db7bd7ae2a2ad4aed826d97a345c6bd4dd4c611"
+    "gitHead": "5db7bd7ae2a2ad4aed826d97a345c6bd4dd4c611",
+    "devDependencies": {
+        "@parcel/packager-ts": "^2.9.2"
+    }
 }

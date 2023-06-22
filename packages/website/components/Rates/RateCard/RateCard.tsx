@@ -1,11 +1,10 @@
-import React from "react";
 import {
     RateCardType,
-    RateDescription as RateDescriptionType,
+    RateDescriptionType as RateDescriptionType,
     RateTableType,
-} from "../../types";
+} from "../types";
 import { RateTable } from "../RateTable";
-import * as styles from "./RateCard.module.css";
+import styles from "./RateCard.module.css";
 import { RateDescription } from "../RateDescription";
 
 export interface RateCardProps {
@@ -19,7 +18,7 @@ export const RateCard = (props: RateCardProps) => {
     const groupedRates = rates.reduce<
         (RateTableType[] | RateDescriptionType)[]
     >((accumulator, currentValue) => {
-        if (currentValue.type === "rateDescription") {
+        if (currentValue._type === "rateDescription") {
             return [...accumulator, currentValue];
         } else {
             const lastGroup = accumulator[accumulator.length - 1];
@@ -36,14 +35,14 @@ export const RateCard = (props: RateCardProps) => {
         <div className={styles["rate-card"]}>
             <div className={styles["rate-card-heading"]}>
                 <h3>{heading}</h3>
-                {groupedRates.map((g) => {
-                    if (Array.isArray(g)) {
-                        return <RateTable rateTable={g} />;
-                    } else {
-                        return <RateDescription rateDescription={g} />;
-                    }
-                })}
             </div>
+            {groupedRates.map((g) => {
+                if (Array.isArray(g)) {
+                    return <RateTable rateTable={g} />;
+                } else {
+                    return <RateDescription rateDescription={g} />;
+                }
+            })}
         </div>
     );
 };

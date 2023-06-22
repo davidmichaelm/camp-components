@@ -1,6 +1,5 @@
-import React from "react";
-import { RateDescription as RateDescriptionType } from "../../types";
-import * as styles from "./RateDescription.module.css";
+import { RateDescriptionType as RateDescriptionType } from "../types";
+import styles from "./RateDescription.module.css";
 
 export interface RateDescriptionProps {
     rateDescription: RateDescriptionType;

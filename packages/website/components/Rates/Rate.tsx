@@ -1,5 +1,4 @@
-import React from "react";
-import { Rate as RateType } from "../types";
+import { RateType as RateType } from "./types";
 import { RateRow } from "./RateRow";
 
 export interface RateProps {
@@ -8,7 +7,5 @@ export interface RateProps {
 }
 
 export const Rate = ({ rate, className }: RateProps) => {
-    return (
-        <RateRow name={rate.name} value={rate.value} className={className} />
-    );
+    return <RateRow name={rate.name} value={rate.cost} className={className} />;
 };

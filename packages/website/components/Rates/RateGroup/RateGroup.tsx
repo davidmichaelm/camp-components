@@ -1,20 +1,20 @@
-import React from "react";
 import { RateRow } from "../RateRow";
-import { RateGroup as RateGroupType } from "../../types";
-import * as styles from "./RateGroup.module.css";
+import { RateGroupType as RateGroupType } from "../types";
+import styles from "./RateGroup.module.css";
 
 export interface RateGroupProps {
     rateGroup: RateGroupType;
 }
 
 export const RateGroup = ({ rateGroup }: RateGroupProps) => {
+    console.log(rateGroup);
     return (
         <>
-            <RateRow name={rateGroup.title} className={styles["group-title"]} />
-            {rateGroup.rates.map((r) => (
+            <RateRow name={rateGroup.name} className={styles["group-title"]} />
+            {rateGroup.childRates.map((r) => (
                 <RateRow
                     name={r.name}
-                    value={r.value}
+                    value={r.cost}
                     className={styles["rate-group-child"]}
                     key={r.name}
                 />
