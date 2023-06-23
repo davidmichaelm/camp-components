@@ -17,9 +17,9 @@
 
 .rate-card-heading h3 {
     text-align: center;
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
+    font-size: 26px;
 }
 
 .rate-card h3,
@@ -34,12 +34,20 @@
         padding: 1em;
         font-size: 1em;
     }
+
+    .rate-card-heading h3 {
+        font-size: 22px;
+    }
 }
 
 @media (max-width: 550px) {
     .rate-card {
         width: 100%;
         font-size: 1.15em;
+    }
+
+    .rate-card-heading h3 {
+        font-size: 24px;
     }
 }
 

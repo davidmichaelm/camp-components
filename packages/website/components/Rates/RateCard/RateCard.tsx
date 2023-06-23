@@ -6,6 +6,9 @@ import {
 import { RateTable } from "../RateTable";
 import styles from "./RateCard.module.css";
 import { RateDescription } from "../RateDescription";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
 export interface RateCardProps {
     heading: string;
@@ -34,7 +37,7 @@ export const RateCard = (props: RateCardProps) => {
     return (
         <div className={styles["rate-card"]}>
             <div className={styles["rate-card-heading"]}>
-                <h3>{heading}</h3>
+                <h3 className={montserrat.className}>{heading}</h3>
             </div>
             {groupedRates.map((g) => {
                 if (Array.isArray(g)) {

@@ -7,7 +7,6 @@ export interface RateGroupProps {
 }
 
 export const RateGroup = ({ rateGroup }: RateGroupProps) => {
-    console.log(rateGroup);
     return (
         <>
             <RateRow name={rateGroup.name} className={styles["group-title"]} />
