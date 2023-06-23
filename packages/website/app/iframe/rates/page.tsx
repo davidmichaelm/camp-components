@@ -1,4 +1,4 @@
-import { RatePage } from "@/components/rates";
+import { RatePage } from "@/components/Rates";
 
 export default async function RatesIframe() {
     return <RatePage />;
