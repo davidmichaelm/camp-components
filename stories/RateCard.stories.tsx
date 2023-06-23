@@ -1,5 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { RateCard, RateCardProps } from "./RateCard";
+import {
+    RateCard,
+    RateCardProps,
+} from "../packages/website/components/Rates/RateCard/RateCard";
 
 const meta = {
     title: "RateCard",
