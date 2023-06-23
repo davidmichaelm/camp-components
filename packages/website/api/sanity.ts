@@ -3,7 +3,7 @@ import {
     RateType,
     RateDescriptionType,
     RateGroupType,
-} from "@/components/rates";
+} from "@/components/Rates";
 
 interface ApiRateCategory {
     name: string;
