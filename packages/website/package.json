@@ -1,6 +1,6 @@
 {
     "name": "website",
-    "version": "0.1.0",
+    "version": "2.2.9",
     "private": true,
     "scripts": {
         "dev": "next dev",
@@ -9,7 +9,7 @@
         "lint": "next lint"
     },
     "dependencies": {
-        "@campphillip/common": "^2.1.14",
+        "@campphillip/common": "^2.2.9",
         "@types/node": "20.3.1",
         "@types/react": "18.2.12",
         "@types/react-dom": "18.2.5",

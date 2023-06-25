@@ -1,6 +1,6 @@
 {
     "name": "@campphillip/forms",
-    "version": "2.1.14",
+    "version": "2.2.9",
     "description": "",
     "context": "browser",
     "type": "module",

@@ -1,6 +1,6 @@
 {
     "name": "@campphillip/common",
-    "version": "2.1.14",
+    "version": "2.2.9",
     "description": "",
     "type": "module",
     "source": "index.ts",
