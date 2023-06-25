@@ -1,6 +1,7 @@
 export interface RateType {
     _type: "rate";
     name: string;
+    detail?: string;
     cost: string;
 }
 

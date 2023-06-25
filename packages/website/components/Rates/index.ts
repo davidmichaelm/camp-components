@@ -1,4 +1,3 @@
-export * from "./Rate";
 export * from "./RateCard";
 export * from "./RateDescription";
 export * from "./RateGroup";

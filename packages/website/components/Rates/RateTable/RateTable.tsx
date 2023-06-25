@@ -1,7 +1,7 @@
+import { RateGroup } from "../RateGroup";
+import { RateRow } from "../RateRow";
 import { RateTableType } from "../types";
 import styles from "./RateTable.module.css";
-import { Rate } from "../Rate";
-import { RateGroup } from "../RateGroup";
 
 export interface RateTableProps {
     rateTable: RateTableType[];
@@ -10,16 +10,25 @@ export interface RateTableProps {
 export const RateTable = (props: RateTableProps) => {
     const { rateTable } = props;
 
+    const hasGroup = rateTable.some((r) => r._type === "rateGroup");
+    const hasDetail = rateTable.some((r) => {
+        return r._type === "rate" && r.detail;
+    });
+
     const rows = rateTable.map((rate: RateTableType) => {
         if (rate._type === "rate") {
+            if (hasDetail)
+                rate = {
+                    detail: rate.detail ?? " ",
+                    ...rate,
+                };
+
             return (
-                <Rate
-                    rate={rate}
-                    className={
-                        rateTable.some((r) => r._type === "rateGroup")
-                            ? styles["group-title"]
-                            : ""
-                    }
+                <RateRow
+                    name={rate.name}
+                    detail={rate.detail}
+                    value={rate.cost}
+                    className={hasGroup ? styles["group-title"] : ""}
                     key={rate.name}
                 />
             );
