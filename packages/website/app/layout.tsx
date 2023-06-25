@@ -1,7 +1,5 @@
-import { Roboto_Slab } from "next/font/google";
+import { roboto } from "./fonts";
 import "./globals.css";
-
-const roboto = Roboto_Slab({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata = {
     title: "Camp Phillip",

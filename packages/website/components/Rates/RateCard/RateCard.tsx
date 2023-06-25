@@ -6,9 +6,7 @@ import {
 import { RateTable } from "../RateTable";
 import styles from "./RateCard.module.css";
 import { RateDescription } from "../RateDescription";
-import { Montserrat } from "next/font/google";
-
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
+import { montserrat } from "@/app/fonts";
 
 export interface RateCardProps {
     heading: string;
