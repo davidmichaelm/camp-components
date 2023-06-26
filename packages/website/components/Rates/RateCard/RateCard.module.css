@@ -1,14 +1,13 @@
 .rate-card {
-    width: 500px;
-    min-height: 225px;
-    margin: 20px;
-    padding: 25px;
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    padding: 1em;
     background-color: white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    border-radius: 9px;
     flex-shrink: 0;
     align-self: flex-start;
-    font-size: 1.25em;
+    font-size: 1em;
 }
 
 .rate-card-heading {
@@ -19,7 +18,7 @@
     text-align: center;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 22px;
 }
 
 .rate-card h3,
@@ -27,37 +26,30 @@
     margin: 0;
 }
 
-@media (max-width: 400px) {
-    .rate-card {
-        max-width: 100%;
-        margin: 20px 0;
-        padding: 1em;
-        font-size: 1em;
-    }
-
-    .rate-card-heading h3 {
-        font-size: 22px;
-    }
-}
-
-@media (max-width: 550px) {
-    .rate-card {
-        width: 100%;
-        font-size: 1.15em;
-    }
-
+@media (min-width: 400px) {
     .rate-card-heading h3 {
         font-size: 24px;
     }
 }
 
-@media (max-width: 900px) {
+@media (min-width: 550px) {
     .rate-card {
-        margin: 20px auto;
-        min-height: unset;
+        font-size: 1.15em;
+        border-radius: 9px;
     }
 
     .rate-card-heading h3 {
         font-size: 26px;
+    }
+}
+
+@media (min-width: 900px) {
+    .rate-card {
+        padding: 25px;
+        font-size: 1.25em;
+    }
+
+    .rate-card-heading h3 {
+        font-size: 30px;
     }
 }
