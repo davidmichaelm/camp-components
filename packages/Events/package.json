@@ -1,7 +1,7 @@
 {
     "name": "@campphillip/events",
     "context": "browser",
-    "version": "2.2.10",
+    "version": "2.2.13",
     "description": "",
     "type": "module",
     "main": "dist/index.js",
@@ -13,7 +13,7 @@
     "author": "David Marquardt",
     "license": "ISC",
     "dependencies": {
-        "@campphillip/common": "^2.2.9",
+        "@campphillip/common": "^2.2.13",
         "@parcel/transformer-react-refresh-wrap": "^2.2.1",
         "@sanity/block-content-to-react": "^3.0.0",
         "@sanity/client": "^2.21.7",
