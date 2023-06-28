@@ -25,6 +25,8 @@
     ],
     "gitHead": "5db7bd7ae2a2ad4aed826d97a345c6bd4dd4c611",
     "devDependencies": {
-        "@parcel/packager-ts": "^2.9.2"
+        "@parcel/packager-ts": "^2.9.3",
+        "@parcel/transformer-typescript-types": "^2.9.3",
+        "typescript": "^5.1.5"
     }
 }
