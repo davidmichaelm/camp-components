@@ -22,7 +22,7 @@ export const BannerContainer = () => {
         <div className={styles.bannerContainer}>
             <div className={styles.bannerApp}>
                 {banners.map((banner) => (
-                    <Banner {...banner} loading={loading} />
+                    <Banner {...banner} loading={loading} key={banner._id} />
                 ))}
             </div>
         </div>
