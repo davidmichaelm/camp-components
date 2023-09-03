@@ -1,88 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Code Snippet</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Code Snippet</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+    <!-- Copy the contents of the body tag into the desired page. -->
 
-<!-- Copy the contents of the body tag into the desired page. -->
-
-<body>
-    <link rel="stylesheet" href="https://unpkg.com/@campphillip/events@2.2.3/dist/widget.css" />
-    <style>
-        .appContainer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .eventsContainer {
-            background: rgba(254, 209, 54, 0.75);
-            height: 660px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding-bottom: 20px;
-            position: relative;
-        }
-
-        @media only screen and (min-width: 1000px) {
+    <body>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/@campphillip/events@2.2.3/dist/widget.css"
+        />
+        <style>
             .appContainer {
-                margin: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
 
             .eventsContainer {
-                width: 90%;
-                max-width: 1440px;
-                border-radius: 4px;
-                box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+                background: rgba(254, 209, 54, 0.75);
+                height: 660px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding-bottom: 20px;
+                position: relative;
             }
-        }
-    </style>
 
-    <div id="camp-events" class="appContainer">
-        <div class="eventsContainer">
-            <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->
-            <svg width="65" height="65" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a">
-                        <stop stop-color="#fff" stop-opacity="0" offset="0%" />
-                        <stop stop-color="#fff" stop-opacity=".631" offset="63.146%" />
-                        <stop stop-color="#fff" offset="100%" />
-                    </linearGradient>
-                </defs>
-                <g fill="none" fill-rule="evenodd">
-                    <g transform="translate(1 1)">
-                        <path d="M36 18c0-9.94-8.06-18-18-18" id="Oval-2" stroke="url(#a)" stroke-width="2">
-                            <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18"
-                                dur="0.9s" repeatCount="indefinite" />
-                        </path>
-                        <circle fill="#fff" cx="36" cy="18" r="1">
-                            <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18"
-                                dur="0.9s" repeatCount="indefinite" />
-                        </circle>
+            @media only screen and (min-width: 1000px) {
+                .appContainer {
+                    margin: 20px;
+                }
+
+                .eventsContainer {
+                    width: 90%;
+                    max-width: 1440px;
+                    border-radius: 4px;
+                    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+                }
+            }
+        </style>
+
+        <div id="camp-events" class="appContainer">
+            <div class="eventsContainer">
+                <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->
+                <svg
+                    width="65"
+                    height="65"
+                    viewBox="0 0 38 38"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <defs>
+                        <linearGradient
+                            x1="8.042%"
+                            y1="0%"
+                            x2="65.682%"
+                            y2="23.865%"
+                            id="a"
+                        >
+                            <stop
+                                stop-color="#fff"
+                                stop-opacity="0"
+                                offset="0%"
+                            />
+                            <stop
+                                stop-color="#fff"
+                                stop-opacity=".631"
+                                offset="63.146%"
+                            />
+                            <stop stop-color="#fff" offset="100%" />
+                        </linearGradient>
+                    </defs>
+                    <g fill="none" fill-rule="evenodd">
+                        <g transform="translate(1 1)">
+                            <path
+                                d="M36 18c0-9.94-8.06-18-18-18"
+                                id="Oval-2"
+                                stroke="url(#a)"
+                                strokeWidth="2"
+                            >
+                                <animateTransform
+                                    attributeName="transform"
+                                    type="rotate"
+                                    from="0 18 18"
+                                    to="360 18 18"
+                                    dur="0.9s"
+                                    repeatCount="indefinite"
+                                />
+                            </path>
+                            <circle fill="#fff" cx="36" cy="18" r="1">
+                                <animateTransform
+                                    attributeName="transform"
+                                    type="rotate"
+                                    from="0 18 18"
+                                    to="360 18 18"
+                                    dur="0.9s"
+                                    repeatCount="indefinite"
+                                />
+                            </circle>
+                        </g>
                     </g>
-                </g>
-            </svg>
+                </svg>
+            </div>
         </div>
-    </div>
 
-    <script>
-        const src = "https://unpkg.com/@campphillip/events@2.2.3/dist/widget.js";
-        const campEventsScript = document.createElement('script');
+        <script>
+            const src =
+                "https://unpkg.com/@campphillip/events@2.2.3/dist/widget.js";
+            const campEventsScript = document.createElement("script");
 
-        campEventsScript.onload = () => {
-            const campEvents = document.getElementById("camp-events");
-            campEvents.removeAttribute('class');
-        };
-        campEventsScript.src = src;
+            campEventsScript.onload = () => {
+                const campEvents = document.getElementById("camp-events");
+                campEvents.removeAttribute("class");
+            };
+            campEventsScript.src = src;
 
-        document.body.appendChild(campEventsScript);
-    </script>
-</body>
-
+            document.body.appendChild(campEventsScript);
+        </script>
+    </body>
 </html>

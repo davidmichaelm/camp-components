@@ -1,7 +1,7 @@
 import React from "react";
 import { urlFor } from "@campphillip/common";
 import BlockContent from "@sanity/block-content-to-react";
-import * as styles from "./banner.module.css";
+import styles from "./banner.module.css";
 
 const color = (props) => {
     return (
@@ -25,7 +25,7 @@ export const Banner = ({ image, text, url, loading }) => {
     if (loading)
         return (
             <>
-                <div className={styles.banner} style={{ display: "block" }}>
+                <div className={styles["banner"]} style={{ display: "block" }}>
                     <Skeleton height={"100%"} width={"100%"} />
                 </div>
             </>
@@ -41,7 +41,7 @@ export const Banner = ({ image, text, url, loading }) => {
                                     rgba(0, 0, 0, 0.2)
                                   ), url("${urlFor(image).width(1440).url()}")`,
             }}
-            className={styles.banner}
+            className={styles["banner"]}
         >
             <BlockContent blocks={text} serializers={{ marks: { color } }} />
         </span>
