@@ -9,7 +9,11 @@ export const RatePage = async () => {
         <div className={styles["rates-container"]}>
             {rateCategories.map((category) => {
                 return (
-                    <RateCard heading={category.name} rates={category.rates} />
+                    <RateCard
+                        heading={category.name}
+                        rates={category.rates}
+                        key={category.name}
+                    />
                 );
             })}
         </div>
