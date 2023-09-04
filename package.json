@@ -4,11 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "parcel build packages/*",
-        "storybook": "storybook dev -p 6006",
-        "build-storybook": "storybook build"
+        "build": "parcel build packages/*"
     },
-    "author": "",
+    "author": "David Marquardt",
     "license": "ISC",
     "dependencies": {
         "@sanity/client": "^2.21.7",
