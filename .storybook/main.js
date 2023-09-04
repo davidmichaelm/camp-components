@@ -1,15 +1,16 @@
+import { dirname, join } from "path";
 module.exports = {
     stories: [
         "../stories/**/*.stories.mdx",
         "../stories/**/*.stories.@(js|jsx|ts|tsx)",
     ],
     addons: [
-        "@storybook/addon-links",
-        "@storybook/addon-essentials",
-        "storybook-css-modules-preset",
+        getAbsolutePath("@storybook/addon-links"),
+        getAbsolutePath("@storybook/addon-essentials"),
+        getAbsolutePath("storybook-css-modules-preset"),
     ],
     framework: {
-        name: "@storybook/react-webpack5",
+        name: getAbsolutePath("@storybook/nextjs"),
         options: {},
     },
     docs: {
@@ -21,3 +22,7 @@ module.exports = {
         return options;
     },
 };
+
+function getAbsolutePath(value) {
+    return dirname(require.resolve(join(value, "package.json")));
+}
