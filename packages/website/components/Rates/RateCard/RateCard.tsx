@@ -37,11 +37,11 @@ export const RateCard = (props: RateCardProps) => {
             <div className={styles["rate-card-heading"]}>
                 <h3 className={montserrat.className}>{heading}</h3>
             </div>
-            {groupedRates.map((g) => {
+            {groupedRates.map((g, i) => {
                 if (Array.isArray(g)) {
-                    return <RateTable rateTable={g} />;
+                    return <RateTable rateTable={g} key={i} />;
                 } else {
-                    return <RateDescription rateDescription={g} />;
+                    return <RateDescription rateDescription={g} key={i} />;
                 }
             })}
         </div>
