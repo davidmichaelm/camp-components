@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Image from "next/image";
 import styles from "./CategoryLink.module.css";
 
 export interface CategoryLinkProps {
@@ -7,11 +9,22 @@ export interface CategoryLinkProps {
     imageLink: string;
 }
 
-export const CategoryLink = ({ title, subtitle, href }: CategoryLinkProps) => {
+export const CategoryLink = ({
+    title,
+    subtitle,
+    href,
+    imageLink,
+}: CategoryLinkProps) => {
     return (
-        <a href={href} className={styles["contentButton"]}>
+        <Link href={href} className={styles["contentButton"]}>
+            <Image
+                src={imageLink}
+                alt={title}
+                fill={true}
+                className={styles["category-image"]}
+            />
             <div className={styles["buttonTitle"]}>{title}</div>
             <div className={styles["buttonSubtitle"]}>{subtitle}</div>
-        </a>
+        </Link>
     );
 };

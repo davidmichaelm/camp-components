@@ -1,20 +1,24 @@
 .contentButton {
+    position: relative;
+
     flex: 1 1 auto;
     width: 100%;
     height: 250px;
     border-radius: 9px;
+    padding: 1em;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1em;
 
     text-decoration: none;
     font-family: Montserrat, sans-serif;
     font-weight: bold;
     color: white;
 
-    background-size: cover !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
@@ -27,12 +31,79 @@
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
+.category-image {
+    z-index: -100;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 9px;
+}
+
+.buttonTitle,
+.buttonSubtitle {
+    text-align: center;
+}
+
 .buttonTitle {
     font-weight: bold;
     font-size: 38px;
+    line-height: 1em;
     color: #fed136;
 }
 
 .buttonSubtitle {
     font-size: 16px;
+}
+
+@media only screen and (min-width: 550px) {
+    .contentButtonsHeader h1 {
+        font-size: 48px;
+    }
+
+    .contentButton {
+        flex: 1 0 300px;
+        height: 250px;
+    }
+
+    .buttonTitle {
+        font-size: 42px;
+    }
+
+    .buttonSubtitle {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .contentButton {
+        flex: 1 0 400px;
+        height: 350px;
+    }
+
+    .buttonTitle {
+        font-size: 50px;
+    }
+
+    .buttonSubtitle {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (min-width: 1250px) {
+    .contentButton {
+        flex: 1 0 550px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .contentButton {
+        flex: 1 0 600px;
+    }
+
+    .buttonTitle {
+        font-size: 54px;
+    }
+
+    .buttonSubtitle {
+        font-size: 24px;
+    }
 }
