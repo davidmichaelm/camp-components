@@ -4,10 +4,18 @@ import {
     RateDescriptionType,
     RateGroupType,
 } from "@/components/Rates";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
-interface ApiRateCategory {
+export interface ApiRateCategory {
     name: string;
     rates: (RateType | RateGroupType | RateDescriptionType)[];
+}
+
+export interface ApiCategory {
+    title: string;
+    subtitle: string;
+    image: SanityImageSource;
+    url: string;
 }
 
 export const fetchRates = async () => {
@@ -16,6 +24,6 @@ export const fetchRates = async () => {
 };
 
 export const fetchCategories = async () => {
-    // return fetch("/categories");
-    return [];
+    const groq = `*[_type == 'category']|order(orderRank)`;
+    return sanityClient.fetch<ApiCategory[]>(groq);
 };

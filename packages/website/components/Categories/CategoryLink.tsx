@@ -5,26 +5,28 @@ import styles from "./CategoryLink.module.css";
 export interface CategoryLinkProps {
     title: string;
     subtitle: string;
-    href: string;
-    imageLink: string;
+    url: string;
+    imageUrl: string;
 }
 
 export const CategoryLink = ({
     title,
     subtitle,
-    href,
-    imageLink,
+    url,
+    imageUrl,
 }: CategoryLinkProps) => {
     return (
-        <Link href={href} className={styles["contentButton"]}>
+        <Link href={url} className={styles["contentButton"]}>
             <Image
-                src={imageLink}
+                src={imageUrl}
                 alt={title}
                 fill={true}
                 className={styles["category-image"]}
             />
-            <div className={styles["buttonTitle"]}>{title}</div>
-            <div className={styles["buttonSubtitle"]}>{subtitle}</div>
+            <div className={styles["overlay"]}>
+                <div className={styles["buttonTitle"]}>{title}</div>
+                <div className={styles["buttonSubtitle"]}>{subtitle}</div>
+            </div>
         </Link>
     );
 };

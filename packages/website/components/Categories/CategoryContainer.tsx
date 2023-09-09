@@ -20,8 +20,8 @@ export const CategoryContainer = ({ categories }: CategoryContainerProps) => {
                             <CategoryLink
                                 title={category.title}
                                 subtitle={category.subtitle}
-                                href={category.href}
-                                imageLink={category.imageLink}
+                                url={category.url}
+                                imageUrl={category.imageUrl}
                             />
                         );
                     })}
