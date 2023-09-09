@@ -22,6 +22,7 @@ export const CategoryContainer = ({ categories }: CategoryContainerProps) => {
                                 subtitle={category.subtitle}
                                 url={category.url}
                                 imageUrl={category.imageUrl}
+                                key={category.title}
                             />
                         );
                     })}
