@@ -2,9 +2,9 @@ import { Meta, StoryObj } from "@storybook/react";
 import { RateCard, RateCardProps } from "..";
 
 const meta = {
-    title: "RateCard",
+    title: "Components/RateCard",
     component: RateCard,
-}; // satisfies Meta<typeof RateCard>;
+} satisfies Meta<typeof RateCard>;
 
 export default meta;
 type Story = StoryObj<RateCardProps>;
