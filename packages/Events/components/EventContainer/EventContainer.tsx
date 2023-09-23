@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 import * as styles from "./EventContainer.module.css";
 import { EventCard } from "../EventCard";
+import { EventCardProps } from "../EventCard/EventCard";
 
 export const EventContainer = () => {
-    const [events, setEvents] = useState([null, null, null]);
+    const [events, setEvents] = useState<Array<EventCardProps | null>>([
+        null,
+        null,
+        null,
+    ]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -18,11 +23,12 @@ export const EventContainer = () => {
                 buttons
             }`;
             const query = `?query=${encodeURIComponent(groq)}`;
-            let response = await fetch(
+            const response = await fetch(
                 `https://m5ik5me8.api.sanity.io/v1/data/query/production${query}`
             );
-            response = await response.json();
-            setEvents(response.result);
+            const json = await response.json();
+            console.log(json.result);
+            setEvents(json.result);
         };
 
         fetchEvents().then(() => setLoading(false));
