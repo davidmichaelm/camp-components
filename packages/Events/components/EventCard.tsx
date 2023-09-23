@@ -6,7 +6,7 @@ import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { format, isSameDay, isSameMonth } from "date-fns";
 import { CSSProperties } from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import * as styles from "./EventCard.module.css";
+import styles from "./EventCard.module.css";
 
 export interface EventCardProps {
     name?: string;

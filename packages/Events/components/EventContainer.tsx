@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
+import { EventCard, EventCardProps } from "./EventCard";
 import styles from "./EventContainer.module.css";
-import { EventCard } from "../EventCard";
-import { EventCardProps } from "../EventCard/EventCard";
 
 export const EventContainer = () => {
     const [events, setEvents] = useState<Array<EventCardProps | null>>([
