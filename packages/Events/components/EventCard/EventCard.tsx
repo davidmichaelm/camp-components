@@ -1,18 +1,19 @@
 // @ts-ignore
-import BlockContent from "@sanity/block-content-to-react";
-import * as styles from "./EventCard.module.css";
-import { isSameDay, isSameMonth, format } from "date-fns";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { urlFor } from "@campphillip/common";
+import { PortableText } from "@portabletext/react";
+import { PortableTextBlock } from "@portabletext/types";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { format, isSameDay, isSameMonth } from "date-fns";
 import { CSSProperties } from "react";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import * as styles from "./EventCard.module.css";
 
 export interface EventCardProps {
     name?: string;
     image?: SanityImageSource;
     startDate?: string;
     endDate?: string;
-    shortDescription?: string;
+    shortDescription?: PortableTextBlock;
     buttons?: EventButton[];
     loading: boolean;
     containerStyle?: CSSProperties;
@@ -63,7 +64,7 @@ export const EventCard = ({
 
                     <div className={styles.eventCardDescription}>
                         {shortDescription ? (
-                            <BlockContent blocks={shortDescription} />
+                            <PortableText value={shortDescription} />
                         ) : (
                             <Skeleton count={7} />
                         )}

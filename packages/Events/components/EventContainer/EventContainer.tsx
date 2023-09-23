@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import * as styles from "./EventContainer.module.css";
+import styles from "./EventContainer.module.css";
 import { EventCard } from "../EventCard";
 import { EventCardProps } from "../EventCard/EventCard";
 
@@ -27,7 +27,6 @@ export const EventContainer = () => {
                 `https://m5ik5me8.api.sanity.io/v1/data/query/production${query}`
             );
             const json = await response.json();
-            console.log(json.result);
             setEvents(json.result);
         };
 
