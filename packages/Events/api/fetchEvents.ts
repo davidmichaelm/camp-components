@@ -1,7 +1,23 @@
 import { sanityClient } from "@campphillip/common";
-import { EventCardProps } from "../components";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { PortableTextBlock } from "@portabletext/types";
 
-export const fetchEvents = async (): Promise<EventCardProps[]> => {
+export interface Event {
+    name?: string;
+    image?: SanityImageSource;
+    startDate?: string;
+    endDate?: string;
+    shortDescription?: PortableTextBlock;
+    buttons?: EventButton[];
+}
+
+export interface EventButton {
+    text: string;
+    url: string;
+    _key: string;
+}
+
+export const fetchEvents = async (): Promise<Event[]> => {
     const groq = `*[_type == 'event']  | order(startDate asc)
     {
         name,

@@ -1,9 +1,10 @@
+import { Event } from "../api/fetchEvents";
 import { CalendarIcon } from "./CalendarIcon";
-import { EventCard, EventCardProps } from "./EventCard";
+import { EventCard } from "./EventCard";
 import styles from "./EventContainer.module.css";
 
 export interface EventContainerProps {
-    events: Array<EventCardProps | null>;
+    events: Array<Event | null>;
     loading: boolean;
 }
 

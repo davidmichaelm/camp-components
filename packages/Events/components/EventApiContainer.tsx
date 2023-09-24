@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { fetchEvents } from "../api/fetchEvents";
-import { EventCardProps } from "./EventCard";
+import { Event, fetchEvents } from "../api/fetchEvents";
 import { EventContainer } from "./EventContainer";
 import styles from "./EventContainer.module.css";
 
 export const EventApiContainer = () => {
-    const [events, setEvents] = useState<Array<EventCardProps | null>>([
+    const [events, setEvents] = useState<Array<Event | null>>([
         null,
         null,
         null,

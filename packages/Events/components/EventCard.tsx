@@ -1,28 +1,15 @@
 // @ts-ignore
 import { urlFor } from "@campphillip/common";
 import { PortableText } from "@portabletext/react";
-import { PortableTextBlock } from "@portabletext/types";
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { format, isSameDay, isSameMonth } from "date-fns";
 import { CSSProperties } from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import { Event } from "../api/fetchEvents";
 import styles from "./EventCard.module.css";
 
-export interface EventCardProps {
-    name?: string;
-    image?: SanityImageSource;
-    startDate?: string;
-    endDate?: string;
-    shortDescription?: PortableTextBlock;
-    buttons?: EventButton[];
+export interface EventCardProps extends Event {
     loading: boolean;
     containerStyle?: CSSProperties;
-}
-
-export interface EventButton {
-    text: string;
-    url: string;
-    _key: string;
 }
 
 export const EventCard = ({
