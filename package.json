@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "parcel build packages/*"
+        "build": "parcel build packages/common packages/Banners packages/Events packages/Forms"
     },
     "author": "David Marquardt",
     "license": "ISC",
