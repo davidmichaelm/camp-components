@@ -1,22 +1,30 @@
-import React from "react";
 import { urlFor } from "@campphillip/common";
-import BlockContent from "@sanity/block-content-to-react";
-import styles from "./banner.module.css";
+import { PortableText, PortableTextComponents } from "@portabletext/react";
+import Skeleton from "react-loading-skeleton";
+import { BannerModel } from "../api/fetchBanners";
+import styles from "./Banner.module.css";
 
-const color = (props) => {
-    return (
-        <span
-            style={{
-                color: props.mark.hex,
-                "&:hover": { color: props.mark.hex },
-            }}
-        >
-            {props.children}
-        </span>
-    );
+const components: PortableTextComponents = {
+    marks: {
+        color: ({ value, children }) => {
+            return (
+                <span
+                    style={{
+                        color: value.hex,
+                    }}
+                >
+                    {children}
+                </span>
+            );
+        },
+    },
 };
 
-export const Banner = ({ image, text, url, loading }) => {
+export interface BannerProps extends BannerModel {
+    loading: boolean;
+}
+
+export const Banner = ({ image, text, url, loading }: BannerProps) => {
     const onBannerClick = () => {
         if (!url) return;
         window.location.href = url;
@@ -43,7 +51,7 @@ export const Banner = ({ image, text, url, loading }) => {
             }}
             className={styles["banner"]}
         >
-            <BlockContent blocks={text} serializers={{ marks: { color } }} />
+            <PortableText value={text} components={components} />
         </span>
     );
 };

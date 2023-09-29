@@ -13,9 +13,10 @@ export const EventApiContainer = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const events = await fetchEvents();
-            setEvents(events);
-            setLoading(false);
+            fetchEvents()
+                .then((events) => setEvents(events))
+                .catch((error) => console.log(error))
+                .finally(() => setLoading(false));
         }
 
         fetchData();
