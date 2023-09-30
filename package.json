@@ -4,7 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "parcel build packages/*"
+        "build": "npm run build-parcel && npm run build-next",
+        "build-parcel": "parcel build packages/common packages/Banners packages/Events packages/Forms",
+        "build-next": "npm run build --workspace=@campphillip/website"
     },
     "author": "David Marquardt",
     "license": "ISC",

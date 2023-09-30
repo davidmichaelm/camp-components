@@ -1,5 +1,6 @@
 import { CategoryLink, CategoryLinkProps } from "./CategoryLink";
 import styles from "./CategoryContainer.module.css";
+import Image from "next/image";
 
 export interface CategoryContainerProps {
     categories: CategoryLinkProps[];
@@ -8,11 +9,6 @@ export interface CategoryContainerProps {
 export const CategoryContainer = ({ categories }: CategoryContainerProps) => {
     return (
         <div>
-            <div className={styles["categoryContainerHeader"]}>
-                <h1>
-                    Explore <span>Camp Phillip</span>
-                </h1>
-            </div>
             <div className={styles["categoryContainer"]}>
                 {categories.length > 0 &&
                     categories.map((category) => {

@@ -25,7 +25,6 @@
 
 .image {
     object-fit: cover;
-    flex: 1 0 33%;
     width: 100%;
     border-radius: 4px 4px 0 0;
 }
@@ -80,7 +79,7 @@
 
 @media (min-width: 550px) {
     .image {
-        max-height: 400px;
+        max-height: 500px;
     }
 
     .eventCardBody {
@@ -103,10 +102,12 @@
 @media (min-width: 800px) {
     .eventCard {
         flex-direction: row;
+        min-height: 325px;
     }
 
     .image {
-        width: 200px;
+        width: 325px;
+        max-height: none;
         border-radius: 4px 0 0 4px;
     }
 
@@ -115,7 +116,7 @@
     }
 
     .eventCardDescription {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .eventButtons {
