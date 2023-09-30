@@ -18,14 +18,14 @@
     color: white;
     text-align: start;
 
-    box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
     text-decoration: none;
 }
 
 .banner:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     text-decoration: none;
     color: white;
 }
@@ -33,6 +33,16 @@
 .banner p {
     margin: 0;
     line-height: normal;
+}
+
+.banner a {
+    color: #bb5500;
+    text-decoration: none;
+}
+
+.banner a:hover {
+    color: #ff8622;
+    text-decoration: underline;
 }
 
 @media only screen and (min-width: 550px) {
