@@ -21,6 +21,7 @@
 
 .eventCardBody p {
     line-height: unset !important;
+    margin: 0;
 }
 
 .image {
