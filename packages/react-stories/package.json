@@ -1,6 +1,6 @@
 {
     "name": "react-stories",
-    "version": "1.0.0",
+    "version": "2.3.0",
     "description": "",
     "scripts": {
         "storybook": "storybook dev -c src -p 6006",
