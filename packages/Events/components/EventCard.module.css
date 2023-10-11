@@ -21,6 +21,7 @@
 
 .eventCardBody p {
     line-height: unset !important;
+    margin: 0;
 }
 
 .image {
@@ -43,6 +44,10 @@
 
 .eventCardDescription {
     font-size: 16px;
+}
+
+.eventCardDescription p:not(:last-of-type) {
+    margin-bottom: 0.5em;
 }
 
 .eventButtons {
@@ -78,10 +83,6 @@
 }
 
 @media (min-width: 550px) {
-    .image {
-        max-height: 500px;
-    }
-
     .eventCardBody {
         padding: 1.5em !important;
     }
@@ -106,7 +107,7 @@
     }
 
     .image {
-        width: 325px;
+        width: 400px;
         max-height: none;
         border-radius: 4px 0 0 4px;
     }
