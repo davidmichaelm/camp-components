@@ -1,7 +1,7 @@
 {
     "name": "@campphillip/banners",
     "context": "browser",
-    "version": "2.3.0",
+    "version": "2.3.2",
     "description": "",
     "type": "module",
     "main": "dist/index.js",

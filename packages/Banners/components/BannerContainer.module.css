@@ -23,10 +23,6 @@
 }
 
 @media only screen and (min-width: 1000px) {
-    .bannerContainer {
-        padding: 0;
-    }
-
     .bannerApp {
         flex-direction: row;
     }
