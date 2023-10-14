@@ -1,0 +1,38 @@
+{
+    "name": "@campphillip/ui",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "type": "module",
+    "scripts": {
+        "build": "parcel build"
+    },
+    "dependencies": {
+        "date-fns": "^2.28.0",
+        "@campphillip/common": "*",
+        "@portabletext/react": "^3.0.7",
+        "@portabletext/types": "^2.0.6",
+        "@sanity/block-content-to-react": "^3.0.0",
+        "@sanity/image-url": "^1.0.1",
+        "@swc/helpers": "^0.5.1",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "react-loading-skeleton": "^3.1.0"
+    },
+    "devDependencies": {
+        "parcel": "2.9.3",
+        "regenerator-runtime": "^0.13.9"
+    },
+    "targets": {
+        "main": {
+            "source": "index.ts",
+            "sourceMap": true,
+            "isLibrary": true
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "author": "David Marquardt",
+    "license": "ISC"
+}
