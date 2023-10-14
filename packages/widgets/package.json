@@ -18,9 +18,9 @@
     "targets": {
         "widget": {
             "source": [
-                "./events/events.widget.js",
-                "./board-events/board-events.widget.js",
-                "./banners/banners.widget.js"
+                "./events.widget.js",
+                "./board-events.widget.js",
+                "./banners.widget.js"
             ],
             "sourceMap": false,
             "context": "browser"
