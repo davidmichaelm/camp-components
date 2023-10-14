@@ -3,11 +3,11 @@ import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
 import { ConfigContext } from "sanity";
 import { ListItemBuilder, StructureBuilder } from "sanity/desk";
 import banners from "./banners";
-import events from "./events";
+import { boardEvents, events } from "./events";
 
 // Hide document types that we already have a structure definition for
 const hiddenDocTypes = (listItem: ListItemBuilder) =>
-    !["event", "banner", "rateCategory", "category"].includes(
+    !["event", "board-event", "banner", "rateCategory", "category"].includes(
         listItem.getId() ?? ""
     );
 
@@ -16,6 +16,7 @@ export default (S: StructureBuilder, context: ConfigContext) =>
         .title("Base")
         .items([
             events(S),
+            boardEvents(S),
             banners(S),
             orderableDocumentListDeskItem({
                 type: "rateCategory",
