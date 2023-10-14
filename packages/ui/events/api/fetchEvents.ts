@@ -30,3 +30,17 @@ export const fetchEvents = async (): Promise<Event[]> => {
 
     return await sanityClient.fetch(groq);
 };
+
+export const fetchBoardEvents = async (): Promise<Event[]> => {
+    const groq = `*[_type == 'boardEvent']  | order(startDate asc)
+    {
+        name,
+        image,
+        startDate,
+        endDate,
+        shortDescription,
+        buttons
+    }`;
+
+    return await sanityClient.fetch(groq);
+};
