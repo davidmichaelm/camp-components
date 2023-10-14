@@ -32,7 +32,7 @@ export const fetchEvents = async (): Promise<Event[]> => {
 };
 
 export const fetchBoardEvents = async (): Promise<Event[]> => {
-    const groq = `*[_type == 'boardEvent']  | order(startDate asc)
+    const groq = `*[_type == 'board-event']  | order(startDate asc)
     {
         name,
         image,
