@@ -16,9 +16,8 @@
         "sanity"
     ],
     "dependencies": {
+        "@campphilllip/ui": "*",
         "@babel/core": "^7.16.0",
-        "@campphillip/banners": "^2.2.8",
-        "@campphillip/events": "^2.2.10",
         "@sanity/color-input": "^3.0.2",
         "@sanity/components": "^2.14.0",
         "@sanity/icons": "^2.2.2",
