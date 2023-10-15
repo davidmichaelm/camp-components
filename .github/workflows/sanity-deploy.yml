@@ -5,9 +5,13 @@ jobs:
         runs-on: ubuntu-latest
         name: Deploy Sanity
         steps:
-            - uses: actions/checkout@v2
-            - uses: sanity-io/github-action-sanity@v0.2-alpha
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: "20.x"
+                  registry-url: "https://registry.npmjs.org"
+            - run: npm ci
+            - run: npm run build -w=@campphillip/sanity
+            - run: npm run deploy -w=@campphillip/sanity
               env:
                   SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
-              with:
-                  args: deploy
