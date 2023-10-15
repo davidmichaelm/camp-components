@@ -16,7 +16,7 @@
         "sanity"
     ],
     "dependencies": {
-        "@campphilllip/ui": "*",
+        "@campphillip/ui": "*",
         "@babel/core": "^7.16.0",
         "@sanity/color-input": "^3.0.2",
         "@sanity/components": "^2.14.0",
