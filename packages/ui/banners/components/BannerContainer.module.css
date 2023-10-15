@@ -1,0 +1,29 @@
+.bannerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.bannerApp {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 1440px;
+}
+
+@media only screen and (min-width: 550px) {
+    .bannerContainer {
+        padding: 0 20px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .bannerApp {
+        flex-direction: row;
+    }
+}

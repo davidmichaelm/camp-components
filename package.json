@@ -18,7 +18,8 @@
         "react-dom": "^18.2.0"
     },
     "workspaces": [
-        "packages/*"
+        "packages/*",
+        "packages/widgets/*"
     ],
     "devDependencies": {
         "@babel/core": "^7.15.8",

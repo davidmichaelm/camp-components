@@ -1,0 +1,35 @@
+{
+    "name": "@campphillip/widgets",
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "scripts": {
+        "start": "parcel index.html",
+        "build": "parcel build --log-level verbose --detailed-report"
+    },
+    "author": "David Marquardt",
+    "license": "ISC",
+    "dependencies": {
+        "@campphillip/ui": "*",
+        "parcel": "^2.10.0",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0"
+    },
+    "targets": {
+        "widget": {
+            "source": [
+                "./events.widget.js",
+                "./board-events.widget.js",
+                "./banners.widget.js"
+            ],
+            "sourceMap": false,
+            "context": "browser"
+        }
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "dist"
+    ]
+}
