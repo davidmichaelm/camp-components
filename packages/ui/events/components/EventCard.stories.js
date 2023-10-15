@@ -1,4 +1,4 @@
-import { EventCard } from "@campphillip/events";
+import { EventCard } from "./EventCard";
 
 export default {
     title: "EventCard",

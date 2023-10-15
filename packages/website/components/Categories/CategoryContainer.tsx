@@ -1,6 +1,5 @@
 import { CategoryLink, CategoryLinkProps } from "./CategoryLink";
 import styles from "./CategoryContainer.module.css";
-import Image from "next/image";
 
 export interface CategoryContainerProps {
     categories: CategoryLinkProps[];

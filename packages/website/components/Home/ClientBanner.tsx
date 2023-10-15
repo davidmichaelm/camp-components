@@ -1,2 +1,2 @@
 "use client";
-export { Banner } from "@campphillip/banners";
+export { Banner } from "@campphillip/ui";

@@ -1,10 +1,9 @@
 import { ApiCategory, fetchCategories } from "@/api/sanity";
 import { CategoryContainer } from "@/components/Categories";
-import { BannerContainer, fetchBanners } from "@campphillip/banners";
 import { urlFor } from "@campphillip/common";
-import { EventContainer, fetchEvents } from "@campphillip/events";
-import styles from "./HomePage.module.css";
+import { BannerContainer, EventContainer, fetchBanners, fetchEvents } from "@campphillip/ui";
 import { Banner } from "./ClientBanner";
+import styles from "./HomePage.module.css";
 
 export default async function HomePage() {
     const banners = await fetchBanners();

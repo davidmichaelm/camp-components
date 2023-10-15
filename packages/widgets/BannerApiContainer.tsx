@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
-import { BannerModel, fetchBanners } from "../api/fetchBanners";
-import { BannerContainer } from "./BannerContainer";
-import { Banner } from "./Banner";
+import { Banner, BannerContainer, BannerModel, fetchBanners } from "@campphillip/ui";
+import React, { useEffect, useState } from "react";
 
 export const BannerApiContainer = () => {
     const [banners, setBanners] = useState<BannerModel[]>([]);

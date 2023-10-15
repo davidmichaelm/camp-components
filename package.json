@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "build": "npm run build-parcel && npm run build-next",
-        "build-parcel": "parcel build packages/common packages/Banners packages/Events packages/Forms",
+        "build-parcel": "parcel build packages/common packages/Forms packages/ui packages/widgets",
+        "watch-parcel": "parcel watch packages/common packages/Forms packages/ui packages/widgets",
         "build-next": "npm run build --workspace=@campphillip/website"
     },
     "author": "David Marquardt",

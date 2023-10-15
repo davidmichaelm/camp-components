@@ -1,0 +1,12 @@
+.appContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(51, 51, 51);
+}
+
+@media only screen and (min-width: 1000px) {
+    .appContainer {
+        padding: 20px;
+    }
+}

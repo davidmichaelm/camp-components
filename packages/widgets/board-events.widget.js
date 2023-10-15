@@ -1,11 +1,11 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { BoardEventApiContainer } from "@campphillip/ui";
+import { EventApiContainer } from "./EventApiContainer";
 
 const boardEventsContainer = document.getElementById("board-events");
 const root = createRoot(boardEventsContainer);
 root.render(
     <React.StrictMode>
-        <BoardEventApiContainer />
+        <EventApiContainer type={'board-events'} />
     </React.StrictMode>
 );

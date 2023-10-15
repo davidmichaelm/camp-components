@@ -1,4 +1,4 @@
-import { Banner } from "@campphillip/banners";
+import { Banner } from "./Banner";
 
 export default {
     title: "Banner",
