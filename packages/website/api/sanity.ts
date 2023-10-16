@@ -1,4 +1,4 @@
-import { sanityClient } from "@campphillip/common";
+import { sanityClient } from "@campphillip/api";
 import {
     RateType,
     RateDescriptionType,

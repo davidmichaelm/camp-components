@@ -1,4 +1,5 @@
-import { Banner, BannerContainer, BannerModel, fetchBanners } from "@campphillip/ui";
+import { BannerModel, fetchBanners } from "@campphillip/api";
+import { Banner, BannerContainer } from "@campphillip/ui";
 import React, { useEffect, useState } from "react";
 
 export const BannerApiContainer = () => {

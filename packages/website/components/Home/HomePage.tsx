@@ -1,7 +1,7 @@
 import { ApiCategory, fetchCategories } from "@/api/sanity";
 import { CategoryContainer } from "@/components/Categories";
-import { urlFor } from "@campphillip/common";
-import { BannerContainer, EventContainer, fetchBanners, fetchEvents } from "@campphillip/ui";
+import { fetchBanners, fetchEvents, urlFor } from "@campphillip/api";
+import { BannerContainer, EventContainer } from "@campphillip/ui";
 import { Banner } from "./ClientBanner";
 import styles from "./HomePage.module.css";
 

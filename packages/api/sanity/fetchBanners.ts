@@ -1,6 +1,6 @@
-import { sanityClient } from "@campphillip/common";
 import { PortableTextBlock } from "@portabletext/types";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { sanityClient } from "./sanityClient";
 
 export interface BannerModel {
     _id: string;
