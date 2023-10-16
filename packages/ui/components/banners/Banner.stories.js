@@ -1,7 +1,7 @@
 import { Banner } from "./Banner";
 
 export default {
-    title: "Banner",
+    title: "Components/Banner",
     component: Banner,
 };
 

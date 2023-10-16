@@ -1,7 +1,7 @@
 import { EventCard } from "./EventCard";
 
 export default {
-    title: "EventCard",
+    title: "Components/EventCard",
     component: EventCard,
 };
 

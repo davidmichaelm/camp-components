@@ -1,0 +1,56 @@
+.rate-card {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    padding: 1em;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    flex-shrink: 0;
+    align-self: flex-start;
+    font-size: 1em;
+}
+
+.rate-card-heading {
+    margin: 0 0 1em 0;
+}
+
+.rate-card-heading h3 {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.rate-card h3,
+.rate-card h4 {
+    margin: 0;
+}
+
+@media (min-width: 400px) {
+    .rate-card-heading h3 {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 550px) {
+    .rate-card {
+        font-size: 1.15em;
+        border-radius: 9px;
+    }
+
+    .rate-card-heading h3 {
+        font-size: 26px;
+    }
+}
+
+@media (min-width: 900px) {
+    .rate-card {
+        padding: 25px;
+        font-size: 1.25em;
+    }
+
+    .rate-card-heading h3 {
+        font-size: 30px;
+    }
+}

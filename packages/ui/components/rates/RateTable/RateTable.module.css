@@ -1,0 +1,35 @@
+.rate-table {
+    width: 100%;
+    border-spacing: 0;
+    white-space: pre-line;
+}
+
+.rate-table tr:nth-child(odd) {
+    background-color: rgba(254, 209, 54, 0.4);
+}
+
+.rate-table tr:nth-child(even) {
+    background-color: rgba(255, 133, 34, 0.6);
+}
+
+.rate-table tr.background-darker {
+    background-color: rgba(255, 133, 34, 0.6);
+}
+
+.rate-table td {
+    vertical-align: top;
+    padding: 2.5px 5px;
+}
+
+.rate-table td:first-of-type {
+    width: 50%;
+    text-align: left;
+}
+
+.rate-table td:last-of-type {
+    text-align: right;
+}
+
+.group-title > td:first-child {
+    font-weight: bold;
+}
