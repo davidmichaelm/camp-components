@@ -1,12 +1,12 @@
 {
-    "name": "camp-components",
+    "name": "campphillip",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
         "build": "npm run build-parcel && npm run build-next",
-        "build-parcel": "parcel build packages/common packages/Forms packages/ui packages/widgets",
-        "watch-parcel": "parcel watch packages/common packages/Forms packages/ui packages/widgets",
+        "build-parcel": "parcel build packages/api packages/Forms packages/ui packages/widgets",
+        "watch-parcel": "parcel watch packages/api packages/Forms packages/ui packages/widgets",
         "build-next": "npm run build --workspace=@campphillip/website"
     },
     "author": "David Marquardt",

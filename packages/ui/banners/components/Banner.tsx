@@ -1,7 +1,6 @@
-import { urlFor } from "@campphillip/common";
+import { BannerModel, urlFor } from "@campphillip/api";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 import Skeleton from "react-loading-skeleton";
-import { BannerModel } from "../api/fetchBanners";
 import styles from "./Banner.module.css";
 
 const components: PortableTextComponents = {

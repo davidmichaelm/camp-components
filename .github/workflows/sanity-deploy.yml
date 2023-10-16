@@ -11,7 +11,7 @@ jobs:
                   node-version: "20.x"
                   registry-url: "https://registry.npmjs.org"
             - run: npm ci
-            - run: npm run build -w=@campphillip/common -w=@campphillip/ui -w=@campphillip/sanity
+            - run: npm run build -w=@campphillip/api -w=@campphillip/ui -w=@campphillip/sanity
             - run: npm run deploy -w=@campphillip/sanity
               env:
                   SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}

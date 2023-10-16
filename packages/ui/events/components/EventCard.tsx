@@ -1,10 +1,9 @@
 // @ts-ignore
-import { urlFor } from "@campphillip/common";
+import { urlFor, Event } from "@campphillip/api";
 import { PortableText } from "@portabletext/react";
 import { format, isSameDay, isSameMonth } from "date-fns";
 import { CSSProperties } from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import { Event } from "../api/fetchEvents";
 import styles from "./EventCard.module.css";
 
 export interface EventCardProps extends Event {
