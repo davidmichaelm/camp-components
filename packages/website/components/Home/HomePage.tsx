@@ -1,4 +1,3 @@
-import { CategoryContainer } from "@/components/Categories";
 import {
     ApiCategory,
     fetchBanners,
@@ -6,7 +5,11 @@ import {
     fetchEvents,
     urlFor,
 } from "@campphillip/api";
-import { BannerContainer, EventContainer } from "@campphillip/ui";
+import {
+    BannerContainer,
+    CategoryContainer,
+    EventContainer,
+} from "@campphillip/ui";
 import { Banner } from "./ClientBanner";
 import styles from "./HomePage.module.css";
 
