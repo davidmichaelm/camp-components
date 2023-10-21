@@ -1,5 +1,5 @@
+import { fetchRates } from "@campphillip/api";
 import { RateCard } from "../RateCard";
-import { fetchRates } from "@/api/sanity";
 import styles from "./RatePage.module.css";
 
 export const RatePage = async () => {

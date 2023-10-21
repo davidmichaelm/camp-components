@@ -1,3 +1,10 @@
+import { sanityClient } from "./sanityClient";
+
+export interface ApiRateCategory {
+    name: string;
+    rates: (RateType | RateGroupType | RateDescriptionType)[];
+}
+
 export interface RateType {
     _type: "rate";
     name: string;
@@ -20,3 +27,8 @@ export interface RateDescriptionType {
 export type RateCardType = RateType | RateGroupType | RateDescriptionType;
 
 export type RateTableType = Exclude<RateCardType, "RateDescription">;
+
+export const fetchRates = async () => {
+    const groq = `*[_type == 'rateCategory']|order(orderRank)`;
+    return sanityClient.fetch<ApiRateCategory[]>(groq);
+};

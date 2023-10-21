@@ -1,6 +1,6 @@
 import { Event, fetchBoardEvents, fetchEvents } from "@campphillip/api";
 import { EventContainer } from "@campphillip/ui";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import * as styles from "./EventApiContainer.module.css";
 
 export interface EventApiContainerProps {
@@ -33,8 +33,12 @@ export const EventApiContainer = ({ type }: EventApiContainerProps) => {
             <EventContainer
                 events={events}
                 loading={loading}
-                showCalendar={false}
-                title={"Upcoming Board Events"}
+                showCalendar={type === "events"}
+                title={
+                    type === "events"
+                        ? "What's going on at Camp?"
+                        : "Upcoming Board Events"
+                }
             />
         </div>
     );

@@ -1,4 +1,4 @@
-import { RateDescriptionType as RateDescriptionType } from "../types";
+import { RateDescriptionType } from "@campphillip/api";
 import styles from "./RateDescription.module.css";
 
 export interface RateDescriptionProps {
