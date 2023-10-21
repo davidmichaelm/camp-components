@@ -1,6 +1,6 @@
 {
     "name": "@campphillip/widgets",
-    "version": "3.0.1",
+    "version": "3.1.0",
     "description": "",
     "type": "module",
     "scripts": {
@@ -18,9 +18,9 @@
     "targets": {
         "widget": {
             "source": [
-                "./events.widget.js",
-                "./board-events.widget.js",
-                "./banners.widget.js"
+                "./events/events.widget.js",
+                "./events/board-events.widget.js",
+                "./banners/banners.widget.js"
             ],
             "sourceMap": false,
             "context": "browser"
