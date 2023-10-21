@@ -21,6 +21,7 @@
 }
 
 .eventsHeader h1 {
+    font-family: "Montserrat", sans-serif;
     margin: 0;
     font-size: 28px;
     text-transform: unset !important;

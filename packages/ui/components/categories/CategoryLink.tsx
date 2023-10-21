@@ -1,4 +1,4 @@
-import styles from "./CategoryLink.module.css";
+import * as styles from "./CategoryLink.module.css";
 
 export interface CategoryLinkProps {
     title: string;

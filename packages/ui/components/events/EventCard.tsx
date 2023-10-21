@@ -4,7 +4,7 @@ import { PortableText } from "@portabletext/react";
 import { format, isSameDay, isSameMonth } from "date-fns";
 import { CSSProperties } from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import styles from "./EventCard.module.css";
+import * as styles from "./EventCard.module.css";
 
 export interface EventCardProps extends Event {
     loading: boolean;

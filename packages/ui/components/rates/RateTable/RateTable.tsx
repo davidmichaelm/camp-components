@@ -1,7 +1,7 @@
 import { RateTableType } from "@campphillip/api";
 import { RateGroup } from "../RateGroup";
 import { RateRow } from "../RateRow";
-import styles from "./RateTable.module.css";
+import * as styles from "./RateTable.module.css";
 
 export interface RateTableProps {
     rateTable: RateTableType[];

@@ -1,7 +1,6 @@
-import "@fontsource/montserrat/700.css";
 import { RateDescription } from "../RateDescription";
 import { RateTable } from "../RateTable";
-import styles from "./RateCard.module.css";
+import * as styles from "./RateCard.module.css";
 import {
     RateCardType,
     RateDescriptionType,

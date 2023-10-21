@@ -1,7 +1,7 @@
 import { Event } from "@campphillip/api";
 import { CalendarIcon } from "./CalendarIcon";
 import { EventCard } from "./EventCard";
-import styles from "./EventContainer.module.css";
+import * as styles from "./EventContainer.module.css";
 
 export interface EventContainerProps {
     events: Array<Event | null>;
