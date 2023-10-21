@@ -1,0 +1,14 @@
+.rates-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5px 0;
+    gap: 20px;
+    background-color: #fffef0;
+}
+
+@media (min-width: 550px) {
+    .rates-container {
+        padding: 15px;
+    }
+}
