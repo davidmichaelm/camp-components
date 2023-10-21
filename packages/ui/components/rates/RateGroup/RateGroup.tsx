@@ -1,5 +1,5 @@
+import { RateGroupType } from "@campphillip/api";
 import { RateRow } from "../RateRow";
-import { RateGroupType as RateGroupType } from "../types";
 import styles from "./RateGroup.module.css";
 
 export interface RateGroupProps {

@@ -1,8 +1,12 @@
 import "@fontsource/montserrat/700.css";
 import { RateDescription } from "../RateDescription";
 import { RateTable } from "../RateTable";
-import { RateCardType, RateDescriptionType, RateTableType } from "../types";
 import styles from "./RateCard.module.css";
+import {
+    RateCardType,
+    RateDescriptionType,
+    RateTableType,
+} from "@campphillip/api";
 
 export interface RateCardProps {
     heading: string;
