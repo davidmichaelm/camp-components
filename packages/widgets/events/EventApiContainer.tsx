@@ -1,7 +1,7 @@
 import { Event, fetchBoardEvents, fetchEvents } from "@campphillip/api";
 import { EventContainer } from "@campphillip/ui";
 import { useEffect, useState } from "react";
-import * as styles from "./EventApiContainer.module.css";
+import styles from "./EventApiContainer.module.css";
 
 export interface EventApiContainerProps {
     type: "events" | "board-events";

@@ -1,5 +1,5 @@
 import { CategoryLink, CategoryLinkProps } from "./CategoryLink";
-import * as styles from "./CategoryContainer.module.css";
+import styles from "./CategoryContainer.module.css";
 
 export interface CategoryContainerProps {
     categories: CategoryLinkProps[];

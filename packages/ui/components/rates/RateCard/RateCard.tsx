@@ -1,6 +1,6 @@
 import { RateDescription } from "../RateDescription";
 import { RateTable } from "../RateTable";
-import * as styles from "./RateCard.module.css";
+import styles from "./RateCard.module.css";
 import {
     RateCardType,
     RateDescriptionType,
