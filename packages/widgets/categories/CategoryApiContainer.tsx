@@ -5,7 +5,7 @@ import {
     mapCategoryApiToLinkProps,
 } from "@campphillip/ui";
 import { useEffect, useState } from "react";
-import * as styles from "./CategoryApiContainer.module.css";
+import styles from "./CategoryApiContainer.module.css";
 
 export const CategoryApiContainer = () => {
     const [categories, setCategories] = useState<CategoryLinkProps[]>([]);

@@ -1,29 +1,40 @@
 {
     "name": "@campphillip/widgets",
-    "version": "3.1.0",
+    "version": "3.1.1",
     "description": "",
     "type": "module",
     "scripts": {
-        "start": "parcel index.html",
-        "build": "parcel build --log-level verbose --detailed-report"
+        "dev": "vite",
+        "build": "vite build"
     },
     "author": "David Marquardt",
     "license": "ISC",
     "dependencies": {
         "@campphillip/ui": "*",
-        "parcel": "^2.10.0",
         "react": "^18.0.0",
         "react-dom": "^18.0.0"
     },
-    "targets": {
-        "widget": {
-            "source": [
-                "./events/events.widget.js",
-                "./events/board-events.widget.js",
-                "./banners/banners.widget.js"
-            ],
-            "sourceMap": false,
-            "context": "browser"
+    "devDependencies": {
+        "@rollup/plugin-replace": "^5.0.4",
+        "@vitejs/plugin-react": "^4.1.0",
+        "rollup-plugin-visualizer": "^5.9.2",
+        "vite": "^4.5.0"
+    },
+    "exports": {
+        "events": {
+            "import": "./dist/events.widget.js"
+        },
+        "board-events": {
+            "import": "./dist/board-events.widget.js"
+        },
+        "banners": {
+            "import": "./dist/banners.widget.js"
+        },
+        "categories": {
+            "import": "./dist/categories.widget.js"
+        },
+        "rates": {
+            "import": "./dist/rates.widget.js"
         }
     },
     "publishConfig": {

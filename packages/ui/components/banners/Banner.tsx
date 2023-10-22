@@ -1,7 +1,7 @@
 import { BannerModel, urlFor } from "@campphillip/api";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 import Skeleton from "react-loading-skeleton";
-import * as styles from "./Banner.module.css";
+import styles from "./Banner.module.css";
 
 const components: PortableTextComponents = {
     marks: {

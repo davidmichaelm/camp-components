@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import * as styles from "./BannerContainer.module.css";
+import styles from "./BannerContainer.module.css";
 
 export const BannerContainer = ({ children }: PropsWithChildren) => {
     return (
