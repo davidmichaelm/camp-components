@@ -5,7 +5,6 @@ import {
     mapCategoryApiToLinkProps,
 } from "@campphillip/ui";
 import { useEffect, useState } from "react";
-import styles from "./CategoryApiContainer.module.css";
 
 export const CategoryApiContainer = () => {
     const [categories, setCategories] = useState<CategoryLinkProps[]>([]);
@@ -21,8 +20,6 @@ export const CategoryApiContainer = () => {
     }, []);
 
     return (
-        <div className={styles["appContainer"]}>
-            <CategoryContainer categories={categories} />
-        </div>
+        <CategoryContainer categories={categories} />
     );
 };

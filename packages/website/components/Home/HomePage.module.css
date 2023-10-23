@@ -1,5 +1,6 @@
 .home-container {
     width: 100%;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,7 +10,6 @@
 .home-content {
     width: 100%;
     max-width: 1440px;
-    padding: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,8 +21,7 @@
 }
 
 @media (min-width: 1000px) {
-    .home-content {
-        padding: 20px 0;
-        width: 90%;
+    .home-container {
+        padding: 20px;
     }
 }
