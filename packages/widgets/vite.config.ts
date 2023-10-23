@@ -9,7 +9,7 @@ export default defineConfig({
         react(),
         visualizer(),
         replace({
-            "process.env.NODE_ENV": JSON.stringify("production"),
+            "process.env.NODE_ENV": process.env.NODE_ENV === 'production' ? JSON.stringify("production") : JSON.stringify("development"),
         }),
     ],
     server: {

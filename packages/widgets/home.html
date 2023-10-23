@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Home Page Widgets Example</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </head>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto Slab", serif;
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .home-container {
+            width: 100%;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fffef0;
+        }
+
+        .home-content {
+            width: 100%;
+            max-width: 1440px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .home-content > * {
+            width: 100%;
+        }
+
+        @media (min-width: 1000px) {
+            .home-container {
+                padding: 20px;
+            }
+        }
+    </style>
+
+    <body>
+        <div class="home-container">
+            <div class="home-content">
+                <div id="camp-events"></div>
+                <div id="camp-banners"></div>
+                <div id="camp-categories"></div>
+            </div>
+        </div>
+        <script type="module" src="./events/events.widget.jsx"></script>
+        <script type="module" src="./banners/banners.widget.jsx"></script>
+        <script type="module" src="./categories/categories.widget.jsx"></script>
+    </body>
+</html>
