@@ -1,6 +1,7 @@
 import { BannerModel, urlFor } from "@campphillip/api";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import styles from "./Banner.module.css";
 
 const components: PortableTextComponents = {
@@ -31,11 +32,9 @@ export const Banner = ({ image, text, url, loading }: BannerProps) => {
 
     if (loading)
         return (
-            <>
-                <div className={styles["banner"]} style={{ display: "block" }}>
-                    <Skeleton height={"100%"} width={"100%"} />
-                </div>
-            </>
+            <div className={styles["banner"]} style={{ display: "block" }}>
+                <Skeleton height={"100%"} width={"100%"} />
+            </div>
         );
 
     return (

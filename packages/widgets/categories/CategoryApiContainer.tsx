@@ -19,7 +19,5 @@ export const CategoryApiContainer = () => {
             .finally(() => setLoading(false));
     }, []);
 
-    return (
-        <CategoryContainer categories={categories} />
-    );
+    return <CategoryContainer categories={categories} loading={loading} />;
 };
