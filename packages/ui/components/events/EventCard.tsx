@@ -1,13 +1,13 @@
-// @ts-ignore
-import { urlFor, Event } from "@campphillip/api";
+import { Event, urlFor } from "@campphillip/api";
 import { PortableText } from "@portabletext/react";
 import { format, isSameDay, isSameMonth } from "date-fns";
 import { CSSProperties } from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import styles from "./EventCard.module.css";
 
 export interface EventCardProps extends Event {
-    loading: boolean;
+    loading?: boolean;
     containerStyle?: CSSProperties;
 }
 
@@ -35,7 +35,10 @@ export const EventCard = ({
                     />
                 ) : (
                     <div className={styles.image}>
-                        <Skeleton height={400} />
+                        <Skeleton
+                            height={400}
+                            style={{ lineHeight: "normal" }}
+                        />
                     </div>
                 )}
                 <div className={styles.eventCardBody}>

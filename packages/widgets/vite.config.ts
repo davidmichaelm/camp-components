@@ -7,9 +7,9 @@ import { defineConfig } from "vite";
 export default defineConfig({
     plugins: [
         react(),
-        visualizer(),
+        // visualizer(),
         replace({
-            "process.env.NODE_ENV": process.env.NODE_ENV === 'production' ? JSON.stringify("production") : JSON.stringify("development"),
+            "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
         }),
     ],
     server: {

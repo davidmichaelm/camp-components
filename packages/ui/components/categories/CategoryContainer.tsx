@@ -3,9 +3,13 @@ import styles from "./CategoryContainer.module.css";
 
 export interface CategoryContainerProps {
     categories: CategoryLinkProps[];
+    loading?: boolean;
 }
 
-export const CategoryContainer = ({ categories }: CategoryContainerProps) => {
+export const CategoryContainer = ({
+    categories,
+    loading,
+}: CategoryContainerProps) => {
     return (
         <div>
             <div className={styles["categoryContainer"]}>
@@ -18,6 +22,7 @@ export const CategoryContainer = ({ categories }: CategoryContainerProps) => {
                                 url={category.url}
                                 imageUrl={category.imageUrl}
                                 key={category.title}
+                                loading={loading}
                             />
                         );
                     })}

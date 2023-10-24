@@ -1,3 +1,5 @@
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import styles from "./CategoryLink.module.css";
 
 export interface CategoryLinkProps {
@@ -5,6 +7,7 @@ export interface CategoryLinkProps {
     subtitle: string;
     url: string;
     imageUrl: string;
+    loading?: boolean;
 }
 
 export const CategoryLink = ({
@@ -12,7 +15,22 @@ export const CategoryLink = ({
     subtitle,
     url,
     imageUrl,
+    loading,
 }: CategoryLinkProps) => {
+    if (loading)
+        return (
+            <div
+                className={styles["contentButton"]}
+                style={{ display: "block" }}
+            >
+                <Skeleton
+                    height={"100%"}
+                    width={"100%"}
+                    style={{ lineHeight: "normal" }}
+                />
+            </div>
+        );
+
     return (
         <a href={url} className={styles["contentButton"]}>
             <img
