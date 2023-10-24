@@ -7,7 +7,7 @@ export interface CategoryLinkProps {
     subtitle: string;
     url: string;
     imageUrl: string;
-    loading: boolean;
+    loading?: boolean;
 }
 
 export const CategoryLink = ({

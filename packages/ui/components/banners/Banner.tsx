@@ -21,7 +21,7 @@ const components: PortableTextComponents = {
 };
 
 export interface BannerProps extends BannerModel {
-    loading: boolean;
+    loading?: boolean;
 }
 
 export const Banner = ({ image, text, url, loading }: BannerProps) => {

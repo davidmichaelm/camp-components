@@ -3,7 +3,7 @@ import styles from "./CategoryContainer.module.css";
 
 export interface CategoryContainerProps {
     categories: CategoryLinkProps[];
-    loading: boolean;
+    loading?: boolean;
 }
 
 export const CategoryContainer = ({

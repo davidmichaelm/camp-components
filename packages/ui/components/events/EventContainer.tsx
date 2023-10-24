@@ -5,7 +5,7 @@ import styles from "./EventContainer.module.css";
 
 export interface EventContainerProps {
     events: Array<Event | null>;
-    loading: boolean;
+    loading?: boolean;
     title?: string;
     showCalendar?: boolean;
 }

@@ -7,7 +7,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import styles from "./EventCard.module.css";
 
 export interface EventCardProps extends Event {
-    loading: boolean;
+    loading?: boolean;
     containerStyle?: CSSProperties;
 }
 
