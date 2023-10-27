@@ -1,9 +1,7 @@
 name: Version and Publish Package to npmjs
+on: workflow_dispatch
 env:
     VERSION: patch
-on:
-    release:
-        types: [published]
 jobs:
     build:
         runs-on: ubuntu-latest
