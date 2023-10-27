@@ -1,4 +1,6 @@
-name: Publish Package to npmjs
+name: Version and Publish Package to npmjs
+env:
+    VERSION: patch
 on:
     release:
         types: [published]
@@ -12,6 +14,7 @@ jobs:
               with:
                   node-version: "20.x"
                   registry-url: "https://registry.npmjs.org"
+            - run: npm version ${{env.VERSION}} -ws
             - run: npm ci
             - run: npm run build -w=@campphillip/widgets
             - run: npm publish --access public -w=@campphillip/widgets
