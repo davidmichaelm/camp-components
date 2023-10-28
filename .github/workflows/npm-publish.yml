@@ -24,7 +24,7 @@ jobs:
             - run: |
                   npm ci
                   npm version ${{inputs.version}} -ws
-                  git push && git push --tags
+                  git push
                   npm run build -w=@campphillip/widgets
                   npm publish --access public -w=@campphillip/widgets
               env:
