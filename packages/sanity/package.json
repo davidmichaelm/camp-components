@@ -1,7 +1,7 @@
 {
     "name": "@campphillip/sanity",
     "private": true,
-    "version": "3.1.5",
+    "version": "3.1.6",
     "description": "",
     "main": "package.json",
     "author": "davidmichaelm <davemarquardt@gmail.com>",

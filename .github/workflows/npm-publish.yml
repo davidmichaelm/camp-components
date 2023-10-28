@@ -21,14 +21,12 @@ jobs:
               with:
                   node-version: "20.x"
                   registry-url: "https://registry.npmjs.org"
-            - run: |
-                  npm ci
-                  npm version ${{ inputs.version }} -ws --include-workspace-root
-                  git config user.name "github-actions[bot]"
-                  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-                  git add . && git commit -m "v$(npm run get-version --silent)"
-                  git push
-                  npm run build -w=@campphillip/widgets
-                  npm publish --access public -w=@campphillip/widgets
+            - run: npm ci
+            - run: git config --global user.name "github-actions[bot]" && git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            - run: npm version ${{ inputs.version }} -ws --include-workspace-root
+            - run: git add . && git commit -m "v$(npm run get-version --silent)"
+            - run: git push
+            - run: npm run build -w=@campphillip/widgets
+            - run: npm publish --access public -w=@campphillip/widgets
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
