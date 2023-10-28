@@ -12,10 +12,12 @@ on:
                     - minor
                     - major
 jobs:
-    build:
+    version-and-publish:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
+              with:
+                  token: ${{ secrets.GIT_PAT }}
             # Setup .npmrc file to publish to npm
             - uses: actions/setup-node@v3
               with:
@@ -23,9 +25,8 @@ jobs:
                   registry-url: "https://registry.npmjs.org"
             - run: |
                   npm ci
-                  npm version ${{inputs.version}} -ws --include-workspace-root
-                  $NEW_VERSION=(npm run get-version --silent)
-                  git add . && git commit -m "v$NEW_VERSION"
+                  npm version ${{ inputs.version }} -ws --include-workspace-root
+                  git add . && git commit -m "v$(npm run get-version --silent)"
                   git push
                   npm run build -w=@campphillip/widgets
                   npm publish --access public -w=@campphillip/widgets
