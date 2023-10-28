@@ -1,13 +1,14 @@
 {
     "name": "campphillip",
-    "version": "1.0.1",
+    "version": "3.1.5",
     "description": "",
     "main": "index.js",
     "scripts": {
         "build": "npm run build-parcel && npm run build-next",
         "build-parcel": "parcel build packages/api packages/Forms packages/ui packages/widgets",
         "watch-parcel": "parcel watch packages/api packages/Forms packages/ui packages/widgets",
-        "build-next": "npm run build --workspace=@campphillip/website"
+        "build-next": "npm run build --workspace=@campphillip/website",
+        "get-version": "echo $npm_package_version"
     },
     "author": "David Marquardt",
     "license": "ISC",
