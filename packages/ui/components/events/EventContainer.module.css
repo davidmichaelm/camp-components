@@ -54,6 +54,22 @@
     gap: 20px;
 }
 
+.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    padding: 2em;
+    text-align: center;
+    font-size: 16px;
+    background: #fffef0;
+    border-radius: 4px;
+}
+
+.empty img {
+    width: 100px;
+}
+
 @media only screen and (min-width: 550px) {
     .campEventsApp > div {
         padding: 0 20px;
@@ -76,6 +92,10 @@
         flex-direction: column;
         padding-top: 5px !important;
         padding-bottom: 20px !important;
+    }
+
+    .empty {
+        font-size: 20px;
     }
 }
 
