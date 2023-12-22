@@ -5,6 +5,7 @@ import { CSSProperties } from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import styles from "./EventCard.module.css";
+import classNames from "classnames";
 
 export interface EventCardProps extends Event {
     loading?: boolean;
@@ -14,6 +15,7 @@ export interface EventCardProps extends Event {
 export const EventCard = ({
     name,
     image,
+    imageType,
     startDate,
     endDate,
     shortDescription,
@@ -29,7 +31,10 @@ export const EventCard = ({
                 {image ? (
                     <img
                         src={urlFor(image).height(400).url()}
-                        className={styles["image"]}
+                        className={classNames(
+                            styles["image"],
+                            imageType === "square" && styles["square"]
+                        )}
                         crossOrigin={"anonymous"}
                         alt={""}
                     />

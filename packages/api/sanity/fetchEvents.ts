@@ -5,6 +5,7 @@ import { sanityClient } from "./sanityClient";
 export interface Event {
     name?: string;
     image?: SanityImageSource;
+    imageType?: "default" | "square";
     startDate?: string;
     endDate?: string;
     shortDescription?: PortableTextBlock;
