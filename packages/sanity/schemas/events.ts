@@ -14,6 +14,18 @@ const eventFields = [
         validation: (Rule) => Rule.required(),
     }),
     defineField({
+        title: "Image Type",
+        name: "imageType",
+        type: "string",
+        options: {
+            list: [
+                { title: "Default", value: "default" },
+                { title: "Square", value: "square" },
+            ],
+            layout: "radio",
+        },
+    }),
+    defineField({
         title: "Start Date",
         name: "startDate",
         type: "datetime",
@@ -47,6 +59,9 @@ export const events = defineType({
     name: "event",
     type: "document",
     fields: eventFields,
+    initialValue: {
+        imageType: "default",
+    },
 });
 
 export const boardEvents = defineType({
