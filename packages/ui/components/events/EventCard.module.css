@@ -107,9 +107,17 @@
     }
 
     .image {
-        width: 400px;
+        max-width: 400px;
         max-height: none;
         border-radius: 4px 0 0 4px;
+        padding: 1.5em 0 1.5em 1.5em;
+    }
+
+    .square {
+        aspect-ratio: 1;
+        width: auto;
+        object-fit: contain;
+        margin-bottom: auto;
     }
 
     .eventCardTitle {
