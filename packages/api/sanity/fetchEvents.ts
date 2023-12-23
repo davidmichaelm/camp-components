@@ -23,6 +23,7 @@ export const fetchEvents = async (): Promise<Event[]> => {
     {
         name,
         image,
+        imageType,
         startDate,
         endDate,
         shortDescription,
@@ -37,6 +38,7 @@ export const fetchBoardEvents = async (): Promise<Event[]> => {
     {
         name,
         image,
+        imageType,
         startDate,
         endDate,
         shortDescription,
