@@ -4,9 +4,8 @@
     "description": "",
     "type": "module",
     "module": "index.ts",
-    "main": "dist/index.js",
     "scripts": {
-        "build": "parcel build",
+        "build": "tsc --noEmit",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build"
     },
@@ -29,21 +28,10 @@
         "@storybook/addon-links": "^7.0.9",
         "@storybook/react": "^7.0.9",
         "@storybook/react-webpack5": "^7.0.9",
-        "parcel": "2.9.3",
         "regenerator-runtime": "^0.13.9",
         "storybook": "^7.4.0",
         "storybook-css-modules-preset": "^1.1.1"
     },
-    "targets": {
-        "main": {
-            "source": "index.ts",
-            "sourceMap": true,
-            "isLibrary": true
-        }
-    },
-    "files": [
-        "dist"
-    ],
     "author": "David Marquardt",
     "license": "ISC"
 }

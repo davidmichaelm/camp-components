@@ -4,9 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "npm run build-parcel && npm run build-next",
-        "build-parcel": "parcel build packages/api packages/Forms packages/ui packages/widgets",
-        "watch-parcel": "parcel watch packages/api packages/Forms packages/ui packages/widgets",
+        "build": "npm run build -ws",
         "build-next": "npm run build --workspace=@campphillip/website",
         "get-version": "echo $npm_package_version"
     },
@@ -15,7 +13,6 @@
     "dependencies": {
         "@sanity/client": "^2.21.7",
         "@sanity/image-url": "^1.0.1",
-        "parcel": "^2.2.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },

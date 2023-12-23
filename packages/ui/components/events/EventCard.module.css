@@ -114,7 +114,6 @@
     }
 
     .square {
-        aspect-ratio: 1;
         width: auto;
         object-fit: contain;
         margin-bottom: auto;

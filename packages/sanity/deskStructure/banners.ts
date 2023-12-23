@@ -1,5 +1,4 @@
 import { Banner } from "@campphillip/ui";
-import "@campphillip/ui/dist/index.css?raw";
 import { EditIcon, EyeOpenIcon, ImageIcon } from "@sanity/icons";
 import { StructureBuilder } from "sanity/desk";
 import ComponentPreview from "../components/previews/component/ComponentPreview";

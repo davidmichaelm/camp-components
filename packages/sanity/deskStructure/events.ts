@@ -1,5 +1,4 @@
 import { EventCard } from "@campphillip/ui";
-import "@campphillip/ui/dist/index.css?raw";
 import {
     CalendarIcon,
     EditIcon,
