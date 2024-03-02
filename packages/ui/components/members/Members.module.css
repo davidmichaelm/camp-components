@@ -1,0 +1,37 @@
+.member-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    font-size: 16px;
+}
+
+.member-container > * {
+    margin: 0;
+    padding: 0;
+}
+
+.member-filter {
+    padding: 0.5em;
+    border-style: solid;
+    border-radius: 4px;
+    width: 16em;
+    font-size: 16px;
+}
+
+.member-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-height: 1000px;
+}
+
+.member-letter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.letter-header {
+    font-weight: 700;
+    font-size: 24px;
+}
