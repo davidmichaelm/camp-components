@@ -4,12 +4,19 @@ import { ConfigContext } from "sanity";
 import { ListItemBuilder, StructureBuilder } from "sanity/desk";
 import banners from "./banners";
 import { boardEvents, events } from "./events";
+import { members } from "./members";
 
 // Hide document types that we already have a structure definition for
 const hiddenDocTypes = (listItem: ListItemBuilder) =>
-    !["event", "board-event", "banner", "rateCategory", "category"].includes(
-        listItem.getId() ?? ""
-    );
+    ![
+        "event",
+        "board-event",
+        "banner",
+        "rateCategory",
+        "category",
+        "city",
+        "member",
+    ].includes(listItem.getId() ?? "");
 
 export default (S: StructureBuilder, context: ConfigContext) =>
     S.list()
@@ -32,5 +39,6 @@ export default (S: StructureBuilder, context: ConfigContext) =>
                 S,
                 context,
             }),
+            members(S),
             ...S.documentTypeListItems().filter(hiddenDocTypes),
         ]);

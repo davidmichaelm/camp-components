@@ -1,11 +1,11 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { EventApiContainer } from "./EventApiContainer";
+import { MemberApiContainer } from "./MembersApiContainer";
 
 const eventsContainer = document.getElementById("active-members");
 const root = createRoot(eventsContainer);
 root.render(
-  <React.StrictMode>
-    <EventApiContainer type={"events"} />
-  </React.StrictMode>,
+    <React.StrictMode>
+        <MemberApiContainer />
+    </React.StrictMode>
 );

@@ -4,6 +4,7 @@ import schemas from "./schemas/schema";
 import { colorInput } from "@sanity/color-input";
 import deskStructure from "./deskStructure";
 import { visionTool } from "@sanity/vision";
+import { memberByCityTemplate } from "./schemas/members";
 
 export default defineConfig({
     title: "Camp Phillip",
@@ -18,6 +19,7 @@ export default defineConfig({
     ],
     schema: {
         types: schemas,
+        templates: [memberByCityTemplate],
     },
     tools: (prev, context) => {
         const isAdmin = context?.currentUser?.roles.find(
