@@ -2,6 +2,7 @@ import { Member as MemberType } from "@campphillip/api";
 import { MemberFilter } from "./MemberFilter";
 import { useMemberFilter } from "./hooks/useMemberFilter";
 import styles from "./Members.module.css";
+import { Fragment } from "react";
 
 export interface MemberContainerProps {
     members: MemberType[];
@@ -20,7 +21,7 @@ export const MemberContainer = ({ members }: MemberContainerProps) => {
                     const cities = citiesByFirstLetter[letter];
 
                     return (
-                        <>
+                        <Fragment key={letter}>
                             <div className={styles["letter-header"]}>
                                 {letter}
                             </div>
@@ -28,7 +29,7 @@ export const MemberContainer = ({ members }: MemberContainerProps) => {
                                 const cityChurches = membersByCity[city];
 
                                 return (
-                                    <>
+                                    <Fragment key={city}>
                                         <strong>{city}</strong>
                                         {cityChurches.map((churchName) => {
                                             return (
@@ -37,10 +38,10 @@ export const MemberContainer = ({ members }: MemberContainerProps) => {
                                                 </div>
                                             );
                                         })}
-                                    </>
+                                    </Fragment>
                                 );
                             })}
-                        </>
+                        </Fragment>
                     );
                 })}
             </div>
