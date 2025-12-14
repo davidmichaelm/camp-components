@@ -1,32 +1,31 @@
 {
-    "name": "@campphillip/sanity",
-    "private": true,
-    "version": "3.1.12",
-    "description": "",
-    "main": "package.json",
-    "author": "davidmichaelm <davemarquardt@gmail.com>",
-    "license": "UNLICENSED",
-    "scripts": {
-        "start": "sanity start",
-        "build": "sanity build",
-        "dev": "sanity dev",
-        "deploy": "sanity deploy"
-    },
-    "keywords": [
-        "sanity"
-    ],
-    "dependencies": {
-        "@campphillip/ui": "*",
-        "@babel/core": "^7.16.0",
-        "@sanity/color-input": "^3.0.2",
-        "@sanity/components": "^2.14.0",
-        "@sanity/icons": "^2.2.2",
-        "@sanity/orderable-document-list": "^1.0.4",
-        "@sanity/vision": "^3.2.3",
-        "prop-types": "^15.8.1",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "sanity": "^3.18.0",
-        "styled-components": "^5.3.1"
-    }
+  "name": "@campphillip/sanity",
+  "private": true,
+  "version": "3.1.12",
+  "description": "",
+  "main": "package.json",
+  "author": "davidmichaelm <davemarquardt@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "sanity start",
+    "build": "sanity build",
+    "dev": "sanity dev",
+    "deploy": "sanity deploy"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.16.0",
+    "@campphillip/ui": "*",
+    "@sanity/color-input": "^3.1.2",
+    "@sanity/icons": "^2.2.2",
+    "@sanity/orderable-document-list": "^1.0.4",
+    "@sanity/vision": "^3.2.3",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sanity": "^3.18.0",
+    "styled-components": "^6.1.19"
+  }
 }
