@@ -11,6 +11,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    _id: "banner-1",
+    url: "https://example.com",
     image: {
       _type: "image",
       asset: {
@@ -104,6 +106,5 @@ export const Default: Story = {
         style: "normal",
       },
     ],
-    startDate: "2021-10-01T12:00:00.000Z",
   }
 };

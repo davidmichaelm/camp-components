@@ -5,7 +5,7 @@ import { sanityClient } from "./sanityClient";
 export interface BannerModel {
     _id: string;
     image: SanityImageSource;
-    text: PortableTextBlock;
+    text: PortableTextBlock[];
     url: string;
 }
 

@@ -8,7 +8,7 @@ export interface Event {
     imageType?: "default" | "square";
     startDate?: string;
     endDate?: string;
-    shortDescription?: PortableTextBlock;
+    shortDescription?: PortableTextBlock[];
     buttons?: EventButton[];
 }
 
@@ -16,6 +16,7 @@ export interface EventButton {
     text: string;
     url: string;
     _key: string;
+    _type?: string;
 }
 
 export const fetchEvents = async (): Promise<Event[]> => {

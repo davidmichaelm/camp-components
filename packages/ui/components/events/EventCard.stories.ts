@@ -12,12 +12,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-      _createdAt: "2021-09-19T13:14:48Z",
-      _id: "9c4aa16d-7bad-47b8-8581-d6f1efa475d5",
-      _rev: "7dkOKJtWoyCn0kHUhDiPzs",
-      _type: "event",
-      _updatedAt: "2021-09-19T13:14:48Z",
-      active: true,
       buttons: [
           {
               _key: "0b9c57f616df",
