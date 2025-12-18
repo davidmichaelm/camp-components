@@ -16,6 +16,8 @@ export default defineConfig({
         port: 3000,
     },
     build: {
+        target: "es2020",
+        minify: "esbuild",
         lib: {
             name: "widgets",
             entry: [
@@ -28,17 +30,16 @@ export default defineConfig({
             formats: ["es"],
         },
         rollupOptions: {
+            external: ["react", "react-dom"],
             output: {
                 manualChunks: (id) => {
-                    if (id.includes("react") || id.includes("react-dom")) {
-                        return "react";
-                    } else if (
-                        id.includes("packages/ui") ||
-                        id.includes("packages/api") ||
-                        id.includes("ApiContainer")
-                    ) {
-                        return "campphillip";
-                    }
+                  if (id.includes("node_modules") ||
+                      id.includes("packages/ui") ||
+                      id.includes("packages/api") ||
+                      id.includes("ApiContainer")
+                  ) {
+                      return "campphillip";
+                  }
                 },
                 chunkFileNames: `[name].js`,
             },
