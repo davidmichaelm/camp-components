@@ -7,11 +7,7 @@ export interface EventApiContainerProps {
 }
 
 export const EventApiContainer = ({ type }: EventApiContainerProps) => {
-    const [events, setEvents] = useState<Array<Event | null>>([
-        null,
-        null,
-        null,
-    ]);
+    const [events, setEvents] = useState<Event[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

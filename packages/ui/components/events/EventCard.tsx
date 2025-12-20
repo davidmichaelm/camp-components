@@ -1,11 +1,11 @@
 import { Event, urlFor } from "@campphillip/api";
 import { PortableText } from "@portabletext/react";
+import classNames from "classnames";
 import { format, isSameDay, isSameMonth } from "date-fns";
 import { CSSProperties } from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import styles from "./EventCard.module.css";
-import classNames from "classnames";
 
 export interface EventCardProps extends Event {
     loading?: boolean;

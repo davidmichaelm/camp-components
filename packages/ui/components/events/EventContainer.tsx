@@ -4,7 +4,7 @@ import { EventCard } from "./EventCard";
 import styles from "./EventContainer.module.css";
 
 export interface EventContainerProps {
-    events: Array<Event | null>;
+    events: Event[] | null;
     loading?: boolean;
     title?: string;
     showCalendar?: boolean;
@@ -28,7 +28,16 @@ export const EventContainer = ({
                 )}
             </div>
             <div className={styles.eventsContainer}>
-                {events.length > 0 ? (
+              {loading
+                ? (
+                    <>
+                        <EventCard loading={loading} key="loading-1" />
+                        <EventCard loading={loading} key="loading-2" />
+                        <EventCard loading={loading} key="loading-3" />
+                    </>
+                )
+                : events && events.length > 0
+                  ? (
                     events.map((event, index) => {
                         return (
                             <EventCard
@@ -38,7 +47,7 @@ export const EventContainer = ({
                             />
                         );
                     })
-                ) : (
+                  ) : (
                     <div className={styles["empty"]}>
                         <img src="https://d2114hmso7dut1.cloudfront.net/customers/096355b6-1a03-11eb-a9c3-0614187498c1/sites/096f9d4e-1a03-11eb-b2dd-0614187498c1/files/67900ba0-5f83-11eb-9222-e3d4d8baf1a9/original/file.png?t=1611630366" />
                         No upcoming events. Check back later!

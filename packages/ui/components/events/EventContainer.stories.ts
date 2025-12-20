@@ -1,17 +1,18 @@
+import React from "react";
 import type { Meta, StoryObj } from '@storybook/react-vite';
-
-import { EventCard } from "./EventCard";
+import { EventContainer } from "./EventContainer";
+import type { Event } from "@campphillip/api";
 
 const meta = {
-    title: "Components/Events/EventCard",
-    component: EventCard,
-} satisfies Meta<typeof EventCard>;
+  title: "Components/Events/EventContainer",
+  component: EventContainer,
+} satisfies Meta<typeof EventContainer>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof EventContainer>;
 
-export const Default: Story = {
-  args: {
+const sampleEvents: Event[] = [
+    {
       buttons: [
           {
               _key: "0b9c57f616df",
@@ -46,11 +47,38 @@ export const Default: Story = {
           },
       ],
       startDate: "2021-10-01T12:00:00.000Z",
-  }
-}
+    } satisfies Event
+];
+
+export const Default: Story = {
+    args: {
+        events: sampleEvents,
+    },
+};
+
+export const Empty: Story = {
+    args: {
+        events: [],
+    },
+};
 
 export const Loading: Story = {
-  args: {
-    loading: true
-  }
-}
+    args: {
+        loading: true,
+        // keep events so layout is visible while loading
+        // events: sampleEvents,
+    },
+};
+
+export const NoCalendar: Story = {
+    args: {
+        showCalendar: false,
+        events: sampleEvents,
+    },
+};
+
+export const CustomTitle: Story = {
+    args: {
+        title: "Upcoming Events — Summer 2025",
+    },
+};
