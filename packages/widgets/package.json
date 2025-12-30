@@ -10,6 +10,10 @@
     },
     "author": "David Marquardt",
     "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/davidmichaelm/camp-components.git"
+    },
     "dependencies": {
         "@campphillip/ui": "*"
     },
