@@ -10,6 +10,7 @@ export interface Event {
     endDate?: string;
     shortDescription?: PortableTextBlock[];
     buttons?: EventButton[];
+    isSummerCampEvent?: boolean;
 }
 
 export interface EventButton {
@@ -28,7 +29,8 @@ export const fetchEvents = async (): Promise<Event[]> => {
         startDate,
         endDate,
         shortDescription,
-        buttons
+        buttons,
+        isSummerCampEvent
     }`;
 
     return await sanityClient.fetch(groq);
@@ -43,7 +45,8 @@ export const fetchBoardEvents = async (): Promise<Event[]> => {
         startDate,
         endDate,
         shortDescription,
-        buttons
+        buttons,
+        isSummerCampEvent
     }`;
 
     return await sanityClient.fetch(groq);

@@ -22,12 +22,19 @@ export const EventCard = ({
     buttons,
     loading,
     containerStyle,
+    isSummerCampEvent,
 }: EventCardProps) => {
     const dates = getDates(startDate, endDate);
 
     return (
         <SkeletonTheme baseColor={"#dcdcdc"}>
-            <div className={styles["eventCard"]} style={{ ...containerStyle }}>
+            <div
+                className={classNames(
+                    styles["eventCard"],
+                    isSummerCampEvent && styles["summerCamp"]
+                )}
+                style={{ ...containerStyle }}
+            >
                 {image ? (
                     <img
                         src={urlFor(image).height(400).url()}

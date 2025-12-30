@@ -3,8 +3,9 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 0 10px 20px 10px;
+    padding: 0 0 20px 0;
     position: relative;
+    scroll-behavior: smooth;
 }
 
 .eventsHeader {
@@ -12,6 +13,7 @@
     flex-direction: column;
     align-items: flex-start;
     margin: 25px 0;
+    padding: 0 10px;
     gap: 1em;
     z-index: 5;
 }
@@ -27,6 +29,32 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.eventWrapper {
+    padding: 0 10px;
+}
+
+.summerCampGroup {
+    background: #16a34a;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    scroll-margin-top: 100px;
+    border-top: 8px solid #0f7033;
+    border-bottom: 8px solid #0f7033;
+}
+
+.summerCampTitle {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: rgba(255, 254, 240, 1);
+    margin: 0;
+    font-size: 28px;
+    text-transform: unset !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .empty {
@@ -55,6 +83,10 @@
         font-size: 48px;
     }
 
+    .summerCampTitle {
+        font-size: 48px;
+    }
+
     .empty {
         font-size: 20px;
     }
@@ -63,7 +95,7 @@
 @media only screen and (min-width: 1000px) {
     .eventsContainer {
         max-width: 1440px;
-        padding: 0 40px 1em 40px;
+        padding: 0 0 1em 0;
         margin-bottom: 1em;
         border-radius: 9px;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -75,15 +107,40 @@
         align-items: center;
         justify-content: space-between;
         margin: 30px 0;
+        padding: 0 40px;
     }
 
     .eventsHeader h1 {
+        font-size: 54px;
+    }
+
+    .eventWrapper {
+        padding: 0 40px;
+    }
+
+    .summerCampGroup {
+        padding: 20px 40px;
+    }
+
+    .summerCampTitle {
         font-size: 54px;
     }
 }
 
 @media only screen and (min-width: 1440px) {
     .eventsContainer {
-        padding: 0 4em 2em 4em;
+        padding: 0 0 2em 0;
+    }
+
+    .eventsHeader {
+        padding: 0 4em;
+    }
+
+    .eventWrapper {
+        padding: 0 4em;
+    }
+
+    .summerCampGroup {
+        padding: 20px 4em;
     }
 }
