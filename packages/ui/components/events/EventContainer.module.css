@@ -1,8 +1,32 @@
 .eventsContainer {
+    background: rgba(254, 209, 54, 0.75);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 10px 20px 10px;
+    position: relative;
+}
+
+.eventsHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 25px 0;
+    gap: 1em;
+    z-index: 5;
+}
+
+.eventsHeader h1 {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    font-size: 28px;
+    text-transform: unset !important;
+}
+
+.eventsList {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 100%;
 }
 
 .empty {
@@ -23,7 +47,43 @@
 }
 
 @media only screen and (min-width: 550px) {
+    .eventsHeader {
+        margin: 35px 0;
+    }
+
+    .eventsHeader h1 {
+        font-size: 48px;
+    }
+
     .empty {
         font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .eventsContainer {
+        max-width: 1440px;
+        padding: 0 40px 1em 40px;
+        margin-bottom: 1em;
+        border-radius: 9px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .eventsHeader {
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 30px 0;
+    }
+
+    .eventsHeader h1 {
+        font-size: 54px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .eventsContainer {
+        padding: 0 4em 2em 4em;
     }
 }

@@ -1,0 +1,32 @@
+
+
+.calendarControls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #4caf50;
+    padding: 0.5em 0.75em;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.calendarControls svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+
+
+@media only screen and (min-width: 550px) {
+    .calendarControls {
+        padding: 0.75em 1em;
+        font-size: 20px;
+    }
+
+    .calendarControls svg {
+        width: 24px;
+        height: 24px;
+    }
+}

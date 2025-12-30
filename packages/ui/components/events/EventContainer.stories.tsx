@@ -1,6 +1,6 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { EventContainer } from "./EventContainer";
-import type { Event } from "@campphillip/api";
 import { expect, within } from 'storybook/test';
 import { createMockEvent, createMockEvents } from './mockEvents';
 
