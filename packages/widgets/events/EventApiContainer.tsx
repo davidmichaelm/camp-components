@@ -14,10 +14,14 @@ export const EventApiContainer = ({ type }: EventApiContainerProps) => {
         async function fetchData() {
             const fetchEventOfType =
                 type === "events" ? fetchEvents : fetchBoardEvents;
-            fetchEventOfType()
-                .then((events) => setEvents(events))
-                .catch((error) => console.log(error))
-                .finally(() => setLoading(false));
+            try {
+                const events = await fetchEventOfType();
+                setEvents(events);
+            } catch (error) {
+                console.error(error);
+            } finally {
+                setLoading(false);
+            }
         }
 
         fetchData();

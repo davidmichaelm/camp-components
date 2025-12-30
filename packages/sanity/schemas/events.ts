@@ -42,6 +42,12 @@ const eventFields = [
             Rule.required().min(Rule.valueOfField("startDate")),
     }),
     defineField({
+        title: "Summer Camp Event",
+        name: "isSummerCampEvent",
+        type: "boolean",
+        description: "Summer camp events will be grouped together on the calendar"
+    }),
+    defineField({
         title: "Short Description",
         name: "shortDescription",
         type: "array",
