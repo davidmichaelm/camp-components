@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { within } from 'storybook/test';
 
 import { EventCard } from "./EventCard";
 
@@ -46,6 +47,12 @@ export const Default: Story = {
           },
       ],
       startDate: "2021-10-01T12:00:00.000Z",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await canvas.findByRole("heading", { name: "Fall Women's Retreat" });
+    await canvas.findByText("October 1 – 3");
+    await canvas.findByRole("link", { name: "Register" });
   }
 }
 
