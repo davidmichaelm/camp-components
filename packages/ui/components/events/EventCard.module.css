@@ -27,7 +27,13 @@
 .image {
     object-fit: cover;
     width: 100%;
+    height: 300px;
     border-radius: 4px 4px 0 0;
+}
+
+.square {
+    object-fit: contain;
+    padding: 1em;
 }
 
 .eventCardTitle {
@@ -82,7 +88,7 @@
     }
 
     .eventCardBody {
-        padding: 1.5em !important;
+        padding: 1em !important;
     }
 
     .eventCardTitle {
@@ -102,15 +108,9 @@
 
     .image {
         max-width: 40%;
-        max-height: none;
+        height: auto;
+        min-height: 100%;
         border-radius: 4px 0 0 4px;
-        padding: 1.5em 0 1.5em 1.5em;
-    }
-
-    .square {
-        width: auto;
-        object-fit: contain;
-        margin-bottom: auto;
     }
 
     .eventCardTitle {
