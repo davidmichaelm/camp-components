@@ -1,5 +1,5 @@
 import { Event, fetchBoardEvents, fetchEvents } from "@campphillip/api";
-import { EventContainer } from "@campphillip/ui";
+import { HomeEvents } from "@campphillip/ui";
 import { useEffect, useState } from "react";
 
 export interface EventApiContainerProps {
@@ -24,7 +24,7 @@ export const EventApiContainer = ({ type }: EventApiContainerProps) => {
     }, [type]);
 
     return (
-        <EventContainer
+        <HomeEvents
             events={events}
             loading={loading}
             showCalendar={type === "events"}

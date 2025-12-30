@@ -20,6 +20,12 @@ export const Default: Story = {
               text: "Register",
               url: "https://campphillip.campintouch.com/ui/forms/application/person/App",
           },
+          {
+              _key: "0b9c57f616df",
+              _type: "button",
+              text: "Learn More",
+              url: "https://campphillip.campintouch.com/ui/forms/application/person/App",
+          },
       ],
       endDate: "2021-10-03T16:00:00.000Z",
       image: {
@@ -53,6 +59,7 @@ export const Default: Story = {
     await canvas.findByRole("heading", { name: "Fall Women's Retreat" });
     await canvas.findByText("October 1 – 3");
     await canvas.findByRole("link", { name: "Register" });
+    await canvas.findByRole("link", { name: "Learn More" });
   }
 }
 
