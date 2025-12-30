@@ -77,7 +77,7 @@ export const SingleEvent: Story = {
 export const WithSummerCampEvents: Story = {
     args: {
         events: createMockEvents([
-            // { name: "Spring Women's Retreat", startDate: "2024-03-15T12:00:00.000Z", endDate: "2024-03-17T16:00:00.000Z" },
+            { name: "Spring Women's Retreat", startDate: "2024-03-15T12:00:00.000Z", endDate: "2024-03-17T16:00:00.000Z" },
             { name: "Summer Camp Session 1", isSummerCampEvent: true, startDate: "2024-06-10T12:00:00.000Z", endDate: "2024-06-15T16:00:00.000Z" },
             { name: "Summer Camp Session 2", isSummerCampEvent: true, startDate: "2024-06-17T12:00:00.000Z", endDate: "2024-06-22T16:00:00.000Z" },
             { name: "Summer Camp Session 3", isSummerCampEvent: true, startDate: "2024-06-24T12:00:00.000Z", endDate: "2024-06-29T16:00:00.000Z" },
@@ -85,6 +85,7 @@ export const WithSummerCampEvents: Story = {
             { name: "Fall Women's Retreat", startDate: "2024-10-18T12:00:00.000Z", endDate: "2024-10-20T16:00:00.000Z" },
         ]),
         loading: false,
+        groupSummerCampEvents: true
     },
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement);
@@ -130,6 +131,7 @@ export const ScatteredSummerCampEvents: Story = {
             { name: "Fall Women's Retreat", startDate: "2024-10-18T12:00:00.000Z", endDate: "2024-10-20T16:00:00.000Z" },
         ]),
         loading: false,
+        groupSummerCampEvents: true
     },
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement);
@@ -173,6 +175,7 @@ export const AllSummerCampEvents: Story = {
             { name: "Summer Camp Session 4", isSummerCampEvent: true, startDate: "2024-07-08T12:00:00.000Z", endDate: "2024-07-13T16:00:00.000Z" },
         ]),
         loading: false,
+        groupSummerCampEvents: true
     },
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement);

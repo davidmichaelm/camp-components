@@ -64,9 +64,15 @@ export const EventContainer = ({
                 {loading
                     ? (
                         <>
-                            <EventCard loading={loading} key="loading-1" />
-                            <EventCard loading={loading} key="loading-2" />
-                            <EventCard loading={loading} key="loading-3" />
+                            <div className={styles.eventWrapper}>
+                                <EventCard loading={loading} key="loading-1" />
+                            </div>
+                            <div className={styles.eventWrapper}>
+                                <EventCard loading={loading} key="loading-2" />
+                            </div>
+                            <div className={styles.eventWrapper}>
+                                <EventCard loading={loading} key="loading-3" />
+                            </div>
                         </>
                     )
                     : groupedEvents.length > 0
