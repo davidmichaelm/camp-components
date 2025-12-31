@@ -10,6 +10,7 @@ export default defineConfig({
         // visualizer(),
         replace({
             "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
+            preventAssignment: true,
         }),
     ],
     server: {
@@ -23,6 +24,7 @@ export default defineConfig({
             entry: [
                 "./events/events.widget.jsx",
                 "./events/board-events.widget.jsx",
+                "./events/calendar.widget.jsx",
                 "./banners/banners.widget.jsx",
                 "./categories/categories.widget.jsx",
                 "./rates/rates.widget.jsx",
@@ -31,12 +33,18 @@ export default defineConfig({
         },
         rollupOptions: {
             output: {
-              manualChunks(id) {
-                    if (id.includes('node_modules')) {
-                      return 'vendor';
+                manualChunks(id) {
+                    // Sanity client and image-url should be in their own chunk
+                    if (id.includes('@sanity/client') || id.includes('@sanity/image-url')) {
+                        return 'sanity';
                     }
-                    return 'campphillip';
-                  },
+                    // All other node_modules go to vendor
+                    if (id.includes('node_modules')) {
+                        return 'vendor';
+                    }
+                    // Don't manually chunk application code - let Rollup decide
+                    // This prevents circular dependencies
+                },
                 chunkFileNames: `[name].js`,
             },
         },
