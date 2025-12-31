@@ -1,6 +1,6 @@
 {
     "name": "@campphillip/api",
-    "version": "4.0.9",
+    "version": "4.0.10",
     "description": "",
     "sideEffects": false,
     "type": "module",
