@@ -1,4 +1,4 @@
-import { Event, fetchBoardEvents, fetchEvents } from "@campphillip/api";
+import { Event, fetchEvents } from "@campphillip/api";
 import { HomeEvents, BoardEvents } from "@campphillip/ui";
 import { useEffect, useState } from "react";
 
@@ -12,10 +12,11 @@ export const EventApiContainer = ({ type }: EventApiContainerProps) => {
 
     useEffect(() => {
         async function fetchData() {
-            const fetchEventOfType =
-                type === "events" ? fetchEvents : fetchBoardEvents;
             try {
-                const events = await fetchEventOfType();
+                const events = await fetchEvents({
+                    eventType: type === "events" ? "event" : "board-event",
+                    limit: 3
+                });
                 setEvents(events);
             } catch (error) {
                 console.error(error);

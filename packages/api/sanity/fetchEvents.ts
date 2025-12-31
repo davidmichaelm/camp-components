@@ -20,24 +20,17 @@ export interface EventButton {
     _type?: string;
 }
 
-export const fetchEvents = async (): Promise<Event[]> => {
-    const groq = `*[_type == 'event']  | order(startDate asc)
-    {
-        name,
-        image,
-        imageType,
-        startDate,
-        endDate,
-        shortDescription,
-        buttons,
-        isSummerCampEvent
-    }`;
+export const fetchEvents = async (options?: {
+    eventType?: 'event' | 'board-event';
+    limit?: number;
+    includePassedEvents?: boolean;
+}): Promise<Event[]> => {
+    const { eventType = 'event', limit, includePassedEvents = false } = options || {};
 
-    return await sanityClient.fetch(groq);
-};
+    const dateFilter = includePassedEvents ? '' : `&& endDate >= now()`;
+    const limitClause = limit ? `[0...${limit}]` : '';
 
-export const fetchBoardEvents = async (): Promise<Event[]> => {
-    const groq = `*[_type == 'board-event']  | order(startDate asc)
+    const groq = `*[_type == '${eventType}' ${dateFilter}] | order(startDate asc) ${limitClause}
     {
         name,
         image,
