@@ -18,6 +18,8 @@
 .summerEventsButton:hover {
     background: linear-gradient(135deg, #16a34a, #15803d);
     box-shadow: 0 4px 8px rgba(34, 197, 94, 0.3);
+    color: white;
+    text-decoration: none;
 }
 
 @media only screen and (min-width: 550px) {
